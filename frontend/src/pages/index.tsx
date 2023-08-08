@@ -14,7 +14,7 @@ export default function Home() {
 				<div className={styles.landingcopy}>
 					<p className={styles.title}>SWIFT TICKETS</p>
 					<p className={styles.tagline}>Taylor Swift tickets belong to genuine fans.<br/>Bots will never steal your tickets again.</p>
-					<button className={styles.explorebutton} role="button">EXPLORE TICKETS</button>
+					<button className={styles.explorebutton} role="button">EXPLORE SHOWS</button>
 				</div>
 			</div>
 		</div>
