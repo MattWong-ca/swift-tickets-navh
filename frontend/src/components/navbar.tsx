@@ -1,5 +1,5 @@
 import styles from './navbar.module.css';
-import { useState } from 'react';
+import { useState, useEffect} from 'react';
 import { ethers } from "ethers";
 
 declare var window: any
@@ -28,9 +28,7 @@ export default function Navbar() {
                 return;
             }
 
-            const accounts = await ethereum.request({
-                method: "eth_requestAccounts",
-            });
+            const accounts = await ethereum.request({ method: "eth_requestAccounts" });
 
             console.log("Connected", accounts[0]);
             setCurrentAccount(accounts[0]);
@@ -39,6 +37,10 @@ export default function Navbar() {
             console.error(error);
         }
     };
+
+    useEffect(() => {
+        connectWallet();
+    }, [])
 
     return (
         <div className={styles.navbar}>
