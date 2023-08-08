@@ -1,12 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Xanh+Mono&display=swap');
+
 .navbar {
     background-color: black;
     height: 75px;
     color: white;
     display: flex;
     align-items: center;
+    justify-content: space-between;
 }
 
 .logo {
     height: 40px;
     margin-left: 10px;
+}
+
+.connectwallet {
+    margin-right: 10px;
+    /* align-items: center; */
+    background-color: black;
+    /* border-radius: 12px; */
+    box-shadow: transparent 0 0 0 3px, rgba(18, 18, 18, .1) 0 6px 20px;
+    box-sizing: border-box;
+    border: 3px solid white;
+    color: white;
+    cursor: pointer;
+    display: inline-flex;
+    /* flex: 1 1 auto; */
+    /* font-family: Inter, sans-serif; */
+    /* font-family: 'Xanh Mono', monospace; */
+    font-family: "Arial Narrow", Arial, sans-serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    justify-content: center;
+    line-height: 1;
+    outline: none;
+    /* padding: 1rem 1.2rem; */
+    padding: 10px 12px;
+    text-align: center;
+    text-decoration: none;
+    transition: box-shadow .2s, -webkit-box-shadow .2s;
+    white-space: nowrap;
+    /* border: 0; */
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+.connectwallet:hover {
+    box-shadow: #121212 0 0 0 3px, transparent 0 0 0 0;
+    background-color: white;
+    color: black;
 }
