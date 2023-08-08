@@ -35,6 +35,23 @@ export default function Worldcoin() {
 	};
 
 	return (
+
+        <IDKitWidget
+					action={process.env.NEXT_PUBLIC_WLD_ACTION_NAME!}
+					app_id={process.env.NEXT_PUBLIC_WLD_APP_ID!}
+					onSuccess={onSuccess}
+					handleVerify={handleProof}
+					credential_types={[CredentialType.Orb, CredentialType.Phone]}
+					autoClose
+				>
+					{({ open }) =>
+						<button className="border border-black rounded-md" onClick={open}>
+							<div className="mx-3 my-1">Verify with World ID</div>
+						</button>
+					}
+				</IDKitWidget>
+
+        /*
 		<div>
 			<div className="flex flex-col items-center justify-center align-middle h-screen">
 				<p className="text-2xl mb-5">World ID Cloud Template</p>
@@ -54,5 +71,6 @@ export default function Worldcoin() {
 				</IDKitWidget>
 			</div>
 		</div>
+        */
 	);
 }
