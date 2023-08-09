@@ -1,15 +1,22 @@
 import { CredentialType, IDKitWidget } from "@worldcoin/idkit";
 import type { ISuccessResult } from "@worldcoin/idkit";
-import type { VerifyReply } from "../pages/api/verify";
+import type { VerifyReply } from "./api/verify";
+import Navbar from '../components/navbar';
+import styles from '../styles/checkout.module.css';
+import { useState } from 'react';
 
-export default function Worldcoin() {
+export default function Checkout() {
 
-	var verified = false;
+	const hello = () => {
+		console.log("Hi!")
+	}
+
+	const [verified, setVerified] = useState(false);
 
 	const onSuccess = (result: ISuccessResult) => {
 		// This is where you should perform frontend actions once a user has been verified, such as redirecting to a new page
+		setVerified(true);
 		window.alert("Successfully verified with World ID! Your nullifier hash is: " + result.nullifier_hash);
-		verified = true;
 	};
 
 	const handleProof = async (result: ISuccessResult) => {
@@ -39,21 +46,61 @@ export default function Worldcoin() {
 	};
 
 	return (
+		<div>
+			<Navbar />
+			<p className={styles.title}>CHECKOUT</p>
+			<p className={styles.questiontext}>Verify with World ID to prove you're not a bot:</p>
 
-		<IDKitWidget
-			action={process.env.NEXT_PUBLIC_WLD_ACTION_NAME!}
-			app_id={process.env.NEXT_PUBLIC_WLD_APP_ID!}
-			onSuccess={onSuccess}
-			handleVerify={handleProof}
-			credential_types={[CredentialType.Orb, CredentialType.Phone]}
-			autoClose
-		>
-			{({ open }) =>
-				<button /*className="border border-black rounded-md"*/ onClick={open}>
-					<div /*className="mx-3 my-1"*/>VERIFY I'M HUMAN</div>
+
+			{verified === false ? (
+
+				<IDKitWidget
+					action={process.env.NEXT_PUBLIC_WLD_ACTION_NAME!}
+					app_id={process.env.NEXT_PUBLIC_WLD_APP_ID!}
+					onSuccess={onSuccess}
+					handleVerify={handleProof}
+					credential_types={[CredentialType.Orb, CredentialType.Phone]}
+					autoClose
+				>
+					{({ open }) =>
+						<button className={styles.worldcoinbutton}/*className="border border-black rounded-md"*/ onClick={open}>
+							<div /*className="mx-3 my-1"*/>I'M HUMAN</div>
+						</button>
+					}
+				</IDKitWidget>
+
+
+			) : (
+				<div className={styles.verified}>VERIFIED</div>
+			)}
+
+			{/* <p className={styles.questiontext} style={{ marginTop: '30px' }}>Full name</p> */}
+			<form style={{ marginTop: '50px', marginLeft: '40px' }}>
+				<div className={styles.formGroup}>
+					<label className={styles.formlabels}>Full name</label>
+					<br />
+					<input type="text" id="name" name="name" className={styles.inputfield} />
+				</div>
+
+				<div className={styles.formGroup}>
+					<label className={styles.formlabels}>Email</label>
+					<br />
+					<input type="text" id="email" name="email" className={styles.inputfield} />
+				</div>
+
+				<div className={styles.formGroup}>
+					<label className={styles.formlabels}>Phone number</label>
+					<br />
+					<input type="text" id="phone" name="phone" className={styles.inputfield} />
+				</div>
+
+				<button className={styles.purchasebutton}>
+					<div>PURCHASE NFT TICKET</div>
 				</button>
-			}
-		</IDKitWidget>
+			</form>
+
+		</div>
+
 
 		/*
 		<div>

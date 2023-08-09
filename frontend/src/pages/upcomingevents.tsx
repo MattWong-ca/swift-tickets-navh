@@ -1,6 +1,7 @@
 import Navbar from '../components/navbar';
 import styles from '../styles/upcomingevents.module.css';
-import WorldcoinButton from '../components/worldcoin';
+import WorldcoinButton from './checkout';
+import Link from 'next/link';
 
 export default function Upcomingevents() {
 
@@ -37,7 +38,10 @@ export default function Upcomingevents() {
                         <p style={{ marginTop: '40px', marginLeft: '30px', fontFamily: '"Arial Narrow", Arial, sans-serif', fontWeight: 'bold', fontSize: '30px' }}>The Eras Tour - Nov 15 2024</p>
                         <p style={{ marginLeft: '30px', fontFamily: 'Arial Mono, monospace', color: '#777777' }}>Toronto, CA | Section Z</p>
                         <div className={styles.worldcoinbutton}/*style={{ marginLeft: '30px', marginTop: '25px', fontFamily: '"Arial Narrow", Arial, sans-serif', fontWeight: '700', border: '3px solid black', borderRadius: '0' }}*/>
-                            <button>PURCHASE TICKET</button>
+                            {/* <button>PURCHASE TICKET</button> */}
+                            <Link href="/checkout">
+                                <button role="button">PURCHASE TICKET</button>
+                            </Link>
                         </div>
                     </div>
 

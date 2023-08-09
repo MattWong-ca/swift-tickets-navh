@@ -1,0 +1,124 @@
+.title {
+    font-family: "Arial Narrow", Arial, sans-serif;
+    font-weight: 700;
+    font-size: 30px;
+    margin-top: 40px;
+    margin-left: 40px;
+    margin-bottom: 20px;;
+}
+
+.questiontext {
+    font-family: "Arial Narrow", Arial, sans-serif;
+    /* font-weight: 700; */
+    font-size: 20px;
+    /* margin-top: 40px; */
+    margin-left: 40px;
+    /* margin-bottom: 20px;; */
+}
+
+.worldcoinbutton {
+    font-family: "Arial Narrow", Arial, sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    margin-top: 15px;
+    margin-left: 40px;
+
+    background-color: black;
+    box-sizing: border-box;
+    border: 3px solid white;
+    color: white;
+    cursor: pointer;
+    display: inline-flex;
+    justify-content: center;
+    line-height: 1;
+    outline: none;
+    padding: 10px 12px;
+    text-align: center;
+    text-decoration: none;
+    white-space: nowrap;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+.worldcoinbutton:hover {
+    background-color: white;
+    color: black;
+    border: 3px solid black;
+}
+
+.verified {
+    font-family: "Arial Narrow", Arial, sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    margin-top: 15px;
+    margin-left: 40px;
+
+    background-color: #00ff33;
+    box-sizing: border-box;
+    border: 3px solid white;
+    color: white;
+    cursor: pointer;
+    display: inline-flex;
+    justify-content: center;
+    line-height: 1;
+    outline: none;
+    padding: 10px 12px;
+    text-align: center;
+    text-decoration: none;
+    white-space: nowrap;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+.inputfield {
+    border: 3px solid rgb(132, 132, 132);
+    width: 300px;
+    padding-left: 5px;
+    /* background-color: rgb(238, 238, 238); */
+    outline: none;
+}
+
+.inputfield:focus {
+    border-color: black;
+  }
+
+.formlabels {
+    font-family: "Arial Narrow", Arial, sans-serif;
+    font-size: 20px;
+}
+.formGroup {
+    margin-top: 15px;
+}
+
+.purchasebutton {
+    font-family: "Arial Narrow", Arial, sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    margin-top: 50px;
+    margin-left: -1px;
+
+    background-color: black;
+    box-sizing: border-box;
+    border: 3px solid white;
+    color: white;
+    cursor: pointer;
+    display: inline-flex;
+    justify-content: center;
+    line-height: 1;
+    outline: none;
+    padding: 10px 12px;
+    text-align: center;
+    text-decoration: none;
+    white-space: nowrap;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+.purchasebutton:hover {
+    background-color: white;
+    color: black;
+    border: 3px solid black;
+}
