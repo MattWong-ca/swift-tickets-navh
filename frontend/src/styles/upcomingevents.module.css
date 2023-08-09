@@ -13,6 +13,7 @@
     height: 300px;
     margin-left: 20px;
     width: 440px;
+    position: relative;
 }
 
 .eventtitle {
@@ -27,14 +28,14 @@
     /* font-family: 'Xanh Mono', monospace; */
     font-weight: 700;
     font-size: 20px;
-    margin-top: 25px;
+    margin-top: 15px;
     margin-left: 30px;
 
-    background-color: white;
+    background-color: black;
     /* box-shadow: transparent 0 0 0 3px, rgba(18, 18, 18, .1) 0 6px 20px; */
     box-sizing: border-box;
-    border: 3px solid black;
-    color: black;
+    border: 3px solid white;
+    color: white;
     cursor: pointer;
     display: inline-flex;
     /* font-size: 1.5rem; */
@@ -53,6 +54,12 @@
 
 .worldcoinbutton:hover {
     /* box-shadow: #121212 0 0 0 3px, transparent 0 0 0 0; */
-    background-color: black;
-    color: white;
+    background-color: white;
+    color: black;
+    border: 3px solid black;
+}
+
+.backgroundimage {
+    height: 100px;
+    object-fit: cover;
 }

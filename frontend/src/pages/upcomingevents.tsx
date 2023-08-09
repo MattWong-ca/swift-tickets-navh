@@ -12,23 +12,41 @@ export default function Upcomingevents() {
 
                 <div style={{ display: 'flex', marginLeft: '20px' }}>
                     <div className={styles.wcard}>
-                        {/* <div style={{ backgroundColor: 'red', height: '100px', position: 'relative' }}> */}
-                            <img style={{ backgroundColor: 'red', height: '100px', position: 'relative' }} src="/images/tscardz.jpg">
-                                {/* <img style={{ width: '100px', marginTop: '30px', marginLeft: '30px', position: 'absolute', border: '3px solid black'}} src="/images/swiftw.webp" alt="Swift PFP 1" /> */}
-                            </img>
+                        {/* <div style={{ backgroundColor: 'red', height: '100px', position: 'relative' }}>
+                            <img className={styles.backgroundimage} src="/images/tscardz.jpg"/>
+                            <img style={{ width: '100px', marginTop: '30px', marginLeft: '30px', position: 'absolute', border: '3px solid black'}} src="/images/swiftw.webp" alt="Swift PFP 1" />
                             
-                        {/* </div> */}
+                        </div> */}
+
+                        <div style={{ backgroundColor: 'red', height: '100px', position: 'relative' }}>
+                            <img className={styles.backgroundimage} src="/images/tscardz.jpg" alt="Background" />
+                            <img
+                                style={{
+                                    width: '100px', // Adjust the width of the square image
+                                    position: 'absolute',
+                                    top: '80%', // Position the square image vertically at 50% of the container
+                                    left: '18%', // Position the square image horizontally at 50% of the container
+                                    transform: 'translate(-50%, -50%)', // Center the square image
+                                    border: '2px solid white',
+                                }}
+                                src="/images/swiftw.webp"
+                                alt="Square Image"
+                            />
+                        </div>
 
                         <p style={{ marginTop: '40px', marginLeft: '30px', fontFamily: '"Arial Narrow", Arial, sans-serif', fontWeight: 'bold', fontSize: '30px' }}>The Eras Tour - Nov 15 2024</p>
-                        <p style={{ marginLeft: '30px', fontFamily: 'Arial Mono, monospace', color: '#777777' }}>Toronto, CA | Section W</p>
+                        <p style={{ marginLeft: '30px', fontFamily: 'Arial Mono, monospace', color: '#777777' }}>Toronto, CA | Section Z</p>
                         <div className={styles.worldcoinbutton}/*style={{ marginLeft: '30px', marginTop: '25px', fontFamily: '"Arial Narrow", Arial, sans-serif', fontWeight: '700', border: '3px solid black', borderRadius: '0' }}*/>
-                            <WorldcoinButton/>
+                            <button>PURCHASE TICKET</button>
                         </div>
-                        
-
                     </div>
+
                     <div className={styles.wcard}>
-                        Hi
+                        <div style={{ backgroundColor: 'red', height: '100px', position: 'relative' }}>
+                            {/* <img className={styles.backgroundimage} src="/images/tscardz.jpg"/> */}
+                            <img style={{ width: '100px', marginTop: '30px', marginLeft: '30px', position: 'absolute', border: '3px solid black' }} src="/images/swiftw.webp" alt="Swift PFP 1" />
+
+                        </div>
                     </div>
                     <div className={styles.wcard}>
                         Hi
