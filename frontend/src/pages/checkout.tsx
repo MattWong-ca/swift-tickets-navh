@@ -4,6 +4,7 @@ import type { VerifyReply } from "./api/verify";
 import Navbar from '../components/navbar';
 import styles from '../styles/checkout.module.css';
 import { useState } from 'react';
+import Link from 'next/link';
 
 export default function Checkout() {
 
@@ -48,80 +49,85 @@ export default function Checkout() {
 	return (
 		<div>
 			<Navbar />
-			<p className={styles.title}>CHECKOUT</p>
-			<p className={styles.questiontext}>Verify with World ID to prove you're not a bot:</p>
+			<div className={styles.splittwo}>
+				<div id="checkout" className={styles.halfPage}>
+					<p className={styles.title}>CHECKOUT</p>
+					<p className={styles.questiontext}>Verify with World ID to prove you're not a bot:</p>
 
 
-			{verified === false ? (
+					{verified === false ? (
 
-				<IDKitWidget
-					action={process.env.NEXT_PUBLIC_WLD_ACTION_NAME!}
-					app_id={process.env.NEXT_PUBLIC_WLD_APP_ID!}
-					onSuccess={onSuccess}
-					handleVerify={handleProof}
-					credential_types={[CredentialType.Orb, CredentialType.Phone]}
-					autoClose
-				>
-					{({ open }) =>
-						<button className={styles.worldcoinbutton}/*className="border border-black rounded-md"*/ onClick={open}>
-							<div /*className="mx-3 my-1"*/>I'M HUMAN</div>
+						<IDKitWidget
+							action={process.env.NEXT_PUBLIC_WLD_ACTION_NAME!}
+							app_id={process.env.NEXT_PUBLIC_WLD_APP_ID!}
+							onSuccess={onSuccess}
+							handleVerify={handleProof}
+							credential_types={[CredentialType.Orb, CredentialType.Phone]}
+							autoClose
+						>
+							{({ open }) =>
+								<button className={styles.worldcoinbutton}/*className="border border-black rounded-md"*/ onClick={open}>
+									<div /*className="mx-3 my-1"*/>I'M HUMAN</div>
+								</button>
+							}
+						</IDKitWidget>
+
+
+					) : (
+						<div className={styles.verified}>VERIFIED</div>
+					)}
+
+					{/* <p className={styles.questiontext} style={{ marginTop: '30px' }}>Full name</p> */}
+					<form style={{ marginTop: '50px', marginLeft: '40px' }}>
+						<div className={styles.formGroup}>
+							<label className={styles.formlabels}>Full name</label>
+							<br />
+							<input type="text" id="name" name="name" className={styles.inputfield} />
+						</div>
+
+						<div className={styles.formGroup}>
+							<label className={styles.formlabels}>Email</label>
+							<br />
+							<input type="text" id="email" name="email" className={styles.inputfield} />
+						</div>
+
+						<div className={styles.formGroup}>
+							<label className={styles.formlabels}>Phone number</label>
+							<br />
+							<input type="text" id="phone" name="phone" className={styles.inputfield} />
+						</div>
+
+						<button className={styles.purchasebutton}>
+							<Link href="/upcomingevents">
+								<div>PURCHASE NFT TICKET</div>
+							</Link>
 						</button>
-					}
-				</IDKitWidget>
-
-
-			) : (
-				<div className={styles.verified}>VERIFIED</div>
-			)}
-
-			{/* <p className={styles.questiontext} style={{ marginTop: '30px' }}>Full name</p> */}
-			<form style={{ marginTop: '50px', marginLeft: '40px' }}>
-				<div className={styles.formGroup}>
-					<label className={styles.formlabels}>Full name</label>
-					<br />
-					<input type="text" id="name" name="name" className={styles.inputfield} />
+					</form>
 				</div>
 
-				<div className={styles.formGroup}>
-					<label className={styles.formlabels}>Email</label>
-					<br />
-					<input type="text" id="email" name="email" className={styles.inputfield} />
+				<div id="ordersummary" className={styles.halfPage}>
+					<p className={styles.ordersummary}>ORDER SUMMARY</p>
+
+					<div className={styles.wcard}>
+						{/* <div> */}
+						<img style={{ borderRight: '3px solid black' }} src="/images/eras.jpeg"></img>
+						<div>
+							<p style={{ marginTop: '20px', marginLeft: '30px', fontFamily: '"Arial Narrow", Arial, sans-serif', fontWeight: 'bold', fontSize: '30px' }}>The Eras Tour - Nov 15 2024</p>
+							<p style={{ marginLeft: '30px', marginTop: '10px', fontFamily: 'Arial Mono, monospace', color: 'black' }}>Rogers Centre | Toronto, CA</p>
+							<p style={{ marginLeft: '30px', marginTop: '5px', fontFamily: 'Arial Mono, monospace', color: 'black' }}>Section Z, Row 1, Seat 3</p>
+							<p style={{ marginLeft: '30px', marginTop: '5px', fontFamily: 'Arial Mono, monospace', color: 'black' }}>7:00 PM ET</p>
+						</div>
+
+
+
+					</div>
+					<div className={styles.holder}>
+						<span className={styles.totalText}>TOTAL</span>
+						<span className={styles.totalAmount}>0.013 ETH</span>
+					</div>
 				</div>
 
-				<div className={styles.formGroup}>
-					<label className={styles.formlabels}>Phone number</label>
-					<br />
-					<input type="text" id="phone" name="phone" className={styles.inputfield} />
-				</div>
-
-				<button className={styles.purchasebutton}>
-					<div>PURCHASE NFT TICKET</div>
-				</button>
-			</form>
-
-		</div>
-
-
-		/*
-		<div>
-			<div className="flex flex-col items-center justify-center align-middle h-screen">
-				<p className="text-2xl mb-5">World ID Cloud Template</p>
-				<IDKitWidget
-					action={process.env.NEXT_PUBLIC_WLD_ACTION_NAME!}
-					app_id={process.env.NEXT_PUBLIC_WLD_APP_ID!}
-					onSuccess={onSuccess}
-					handleVerify={handleProof}
-					credential_types={[CredentialType.Orb, CredentialType.Phone]}
-					autoClose
-				>
-					{({ open }) =>
-						<button className="border border-black rounded-md" onClick={open}>
-							<div className="mx-3 my-1">Verify with World ID</div>
-						</button>
-					}
-				</IDKitWidget>
 			</div>
 		</div>
-		*/
 	);
 }
