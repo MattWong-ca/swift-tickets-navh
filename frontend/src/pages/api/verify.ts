@@ -1,4 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from "next";
+import supabase from '../../utils/supabaseConfig';
 
 export const config = {
   api: {
@@ -47,6 +48,11 @@ export default function handler(
           "Credential verified! This user's nullifier hash is: ",
           wldResponse.nullifier_hash
         );
+
+        // const userAddress = req.body.userAddress;
+
+
+
         res.status(verifyRes.status).send({
           code: "success",
           detail: "This action verified correctly!",

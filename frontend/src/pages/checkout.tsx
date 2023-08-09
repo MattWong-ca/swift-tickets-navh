@@ -3,20 +3,17 @@ import type { ISuccessResult } from "@worldcoin/idkit";
 import type { VerifyReply } from "./api/verify";
 import Navbar from '../components/navbar';
 import styles from '../styles/checkout.module.css';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import supabase from '../utils/supabaseConfig';
 
 export default function Checkout() {
 
-	const hello = () => {
-		console.log("Hi!")
-	}
-
-	const [verified, setVerified] = useState(false);
+	const [userVerified, setUserVerified] = useState(false);
 
 	const onSuccess = (result: ISuccessResult) => {
 		// This is where you should perform frontend actions once a user has been verified, such as redirecting to a new page
-		setVerified(true);
+		setUserVerified(true);
 		window.alert("Successfully verified with World ID! Your nullifier hash is: " + result.nullifier_hash);
 	};
 
@@ -46,6 +43,24 @@ export default function Checkout() {
 		}
 	};
 
+	useEffect(() => {
+		async function fetchUserVerificationStatus() {
+			const userAddress = 'user_wallet_address'; //FIX THIS
+			const { data, error } = await supabase
+				.from('users')
+				.select('isWorldcoinVerified')
+				.eq('address', userAddress);
+
+			if (error) {
+				// Handle error
+			} else if (data && data.length > 0) {
+				setUserVerified(data[0].isWorldcoinVerified);
+			}
+		}
+
+		fetchUserVerificationStatus();
+	}, []);
+
 	return (
 		<div>
 			<Navbar />
@@ -55,7 +70,7 @@ export default function Checkout() {
 					<p className={styles.questiontext}>Verify with World ID to prove you're not a bot:</p>
 
 
-					{verified === false ? (
+					{userVerified === false ? (
 
 						<IDKitWidget
 							action={process.env.NEXT_PUBLIC_WLD_ACTION_NAME!}
