@@ -8,9 +8,51 @@
 }
 
 .wcard {
-    background-color: gray;
+    /* background-color: gray; */
     border: 3px solid black;
     height: 300px;
     margin-left: 20px;
     width: 440px;
+}
+
+.eventtitle {
+    font-family: "Arial Narrow", Arial, sans-serif;
+    margin-top: '40px';
+    margin-left: '30px'; 
+}
+
+.worldcoinbutton {
+    font-family: "Arial Narrow", Arial, sans-serif;
+    /* font-family: 'Arial Mono', monospace; */
+    /* font-family: 'Xanh Mono', monospace; */
+    font-weight: 700;
+    font-size: 20px;
+    margin-top: 25px;
+    margin-left: 30px;
+
+    background-color: white;
+    /* box-shadow: transparent 0 0 0 3px, rgba(18, 18, 18, .1) 0 6px 20px; */
+    box-sizing: border-box;
+    border: 3px solid black;
+    color: black;
+    cursor: pointer;
+    display: inline-flex;
+    /* font-size: 1.5rem; */
+    justify-content: center;
+    line-height: 1;
+    outline: none;
+    padding: 10px 12px;
+    text-align: center;
+    text-decoration: none;
+    /* transition: box-shadow .2s, -webkit-box-shadow .2s; */
+    white-space: nowrap;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+.worldcoinbutton:hover {
+    /* box-shadow: #121212 0 0 0 3px, transparent 0 0 0 0; */
+    background-color: black;
+    color: white;
 }
