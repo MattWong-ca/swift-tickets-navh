@@ -10,12 +10,12 @@ contract MintTicket is ERC721URIStorage {
   uint256 private mintedTicketCount;
 
   // We need to pass the name of our NFTs token and its symbol.
-  constructor() ERC721 ("Swift Tickets", "SWIFT") {
+  constructor() ERC721 ("Swift Tickets (Taylor's Version)", "SWIFT") {
     console.log("Please work!");
   }
 
   // A function our user will hit to get their NFT.
-  function mintNftTicket() public {
+  function mintNFTTicket() public {
      // Get the current tokenId, this starts at 0.
     uint256 newTicketId = mintedTicketCount;
 
@@ -23,7 +23,7 @@ contract MintTicket is ERC721URIStorage {
     _safeMint(msg.sender, newTicketId);
     
     // Return the NFT's metadata
-    _setTokenURI(newTicketId, "ipfs://QmXgqF5ifdLsNGjMETCqVAxQcVBfRX39iNsuAcuGoGd4Mm");
+    _setTokenURI(newTicketId, "ipfs://QmWNff6ke3f9nbrLdWrD12aWMcJ2fqB1w4LpFJSPG1r63a");
 
     // Increment counter when next NFT ticket is minted
     mintedTicketCount++;
