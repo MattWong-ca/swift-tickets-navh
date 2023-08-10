@@ -5,11 +5,17 @@ import Navbar from '../components/navbar';
 import styles from '../styles/checkout.module.css';
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import supabase from '../utils/supabaseConfig';
+// import supabase from '../utils/supabaseConfig';
+import { ethers } from 'ethers';
+import testNFT from '../utils/testNFT.json';
+
+declare var window: any
+const CONTRACT_ADDRESS = "0x080a2d469e74670f7d9336A0589AA75148CDa173";
 
 export default function Checkout() {
 
 	const [userVerified, setUserVerified] = useState(false);
+	const [currentAccount, setCurrentAccount] = useState("");
 
 	const onSuccess = (result: ISuccessResult) => {
 		// This is where you should perform frontend actions once a user has been verified, such as redirecting to a new page
@@ -43,23 +49,60 @@ export default function Checkout() {
 		}
 	};
 
-	useEffect(() => {
-		async function fetchUserVerificationStatus() {
-			const userAddress = 'user_wallet_address'; //FIX THIS
-			const { data, error } = await supabase
-				.from('users')
-				.select('isWorldcoinVerified')
-				.eq('address', userAddress);
+	const mintNftTicket = async () => {
+		try {
+			const { ethereum } = window;
 
-			if (error) {
-				// Handle error
-			} else if (data && data.length > 0) {
-				setUserVerified(data[0].isWorldcoinVerified);
+			if (ethereum) {
+				const provider = new ethers.providers.Web3Provider(ethereum);
+				const signer = provider.getSigner();
+				const connectedContract = new ethers.Contract(CONTRACT_ADDRESS, testNFT.abi, signer);
+
+				console.log("Going to pop wallet now to pay gas...")
+				let nftTxn = await connectedContract.makeAnEpicNFT();
+
+				console.log("Mining...please wait.")
+				await nftTxn.wait();
+
+				const accounts = await ethereum.request({ method: "eth_requestAccounts" });
+				setCurrentAccount(accounts[0]);
+				// console.log(currentAccount)
+
+				console.log(`Mined, see transaction: https://goerli.etherscan.io/tx/${nftTxn.hash}`);
+
+			} else {
+				console.log("Ethereum object doesn't exist!");
 			}
+		} catch (error) {
+			console.log(error)
 		}
+	}
 
-		fetchUserVerificationStatus();
-	}, []);
+	const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+		event.preventDefault(); // Prevent the default form submission behavior
+
+		// Need to save form data here (fetch to backend)
+
+		mintNftTicket();
+	};
+
+	// useEffect(() => {
+	// 	async function fetchUserVerificationStatus() {
+	// 		const userAddress = 'user_wallet_address'; //FIX THIS
+	// 		const { data, error } = await supabase
+	// 			.from('users')
+	// 			.select('isWorldcoinVerified')
+	// 			.eq('address', userAddress);
+
+	// 		if (error) {
+	// 			// Handle error
+	// 		} else if (data && data.length > 0) {
+	// 			setUserVerified(data[0].isWorldcoinVerified);
+	// 		}
+	// 	}
+
+	// 	fetchUserVerificationStatus();
+	// }, []);
 
 	return (
 		<div>
@@ -71,7 +114,6 @@ export default function Checkout() {
 
 
 					{userVerified === false ? (
-
 						<IDKitWidget
 							action={process.env.NEXT_PUBLIC_WLD_ACTION_NAME!}
 							app_id={process.env.NEXT_PUBLIC_WLD_APP_ID!}
@@ -93,7 +135,7 @@ export default function Checkout() {
 					)}
 
 					{/* <p className={styles.questiontext} style={{ marginTop: '30px' }}>Full name</p> */}
-					<form style={{ marginTop: '50px', marginLeft: '40px' }}>
+					<form style={{ marginTop: '50px', marginLeft: '40px' }} onSubmit={handleSubmit}>
 						<div className={styles.formGroup}>
 							<label className={styles.formlabels}>Full name</label>
 							<br />
@@ -112,12 +154,12 @@ export default function Checkout() {
 							<input type="text" id="phone" name="phone" className={styles.inputfield} />
 						</div>
 
-						<button className={styles.purchasebutton}>
-							<Link href="/upcomingevents">
-								<div>PURCHASE NFT TICKET</div>
-							</Link>
+						<button className={styles.purchasebutton} type="submit">
+							PURCHASE NFT TICKET
 						</button>
+
 					</form>
+
 				</div>
 
 				<div id="ordersummary" className={styles.halfPage}>

@@ -30,9 +30,10 @@ export default function Navbar() {
 
             const accounts = await ethereum.request({ method: "eth_requestAccounts" });
 
-            console.log("Connected", accounts[0]);
+            // console.log("Connected", accounts[0]);
             setCurrentAccount(accounts[0]);
 
+            // i'm only doing this because it's not in checkout, once it's there this ain't needed
             // fetch('/api/verify', {
             //     method: 'POST',
             //     headers: {
