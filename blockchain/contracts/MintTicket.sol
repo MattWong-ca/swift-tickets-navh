@@ -2,11 +2,10 @@
 
 pragma solidity ^0.8.17;
 
-import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
-import "@openzeppelin/contracts/utils/Counters.sol";
+import "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol";
 import "hardhat/console.sol";
 
-contract MintTicket is ERC721 {
+contract MintTicket is ERC721URIStorage {
   // Counter to keep track of minted tickets.
   uint256 private mintedTicketCount;
 
@@ -24,16 +23,10 @@ contract MintTicket is ERC721 {
     _safeMint(msg.sender, newTicketId);
     
     // Return the NFT's metadata
-    tokenURI(newTicketId);
+    _setTokenURI(newTicketId, "ipfs://QmXgqF5ifdLsNGjMETCqVAxQcVBfRX39iNsuAcuGoGd4Mm");
 
     // Increment counter when next NFT ticket is minted
     mintedTicketCount++;
   }
 
-  // Set the NFT's metadata
-  function tokenURI(uint256 _tokenId) public view override returns (string memory) {
-    require(_exists(_tokenId));
-    console.log("An NFT w/ ID %s has been minted to %s", _tokenId, msg.sender);
-    return "https://cloudflare-ipfs.com/ipfs/QmaW6ZPDLhJ1N4eyqwxGV721C2YiJE39kMv1kGCJ7kYwBt";
-  }
 }

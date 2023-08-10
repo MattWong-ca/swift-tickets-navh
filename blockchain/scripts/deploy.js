@@ -8,7 +8,7 @@ const main = async () => {
     let txn = await nftContract.mintNftTicket()
     // Wait for it to be mined.
     await txn.wait()
-    console.log("Minted NFT #1")
+    console.log("Minted NFT!")
 
   };
   
