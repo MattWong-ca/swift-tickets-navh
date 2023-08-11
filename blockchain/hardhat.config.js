@@ -26,5 +26,10 @@ module.exports = {
       accounts: [process.env.GOERLI_PRIVATE_KEY],
       gasPrice: 1000000000,
     },
+    'mode-testnet': {
+      url: 'https://sepolia.mode.network/',
+      accounts: [process.env.GOERLI_PRIVATE_KEY],
+      gasPrice: 1000000000
+    },
   },
 };
