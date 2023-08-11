@@ -93,10 +93,11 @@ export default async function handler(
 
 
 
-      // const userAddress = req.body.userAddress;
+      const userAddress = req.body.userAddress;
+      console.log(userAddress)
       const { data, error } = await supabase
         .from('users')
-        .upsert([{ address: "asdf", isWorldcoinVerified: true }]);
+        .upsert([{ address: userAddress, isWorldcoinVerified: true }]);
 
       // const userAddress = req.body.userAddress;
       // const { data, error } = await supabase
