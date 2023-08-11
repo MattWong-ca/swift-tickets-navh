@@ -9,5 +9,10 @@ module.exports = {
       url: process.env.QUICKNODE_API_KEY_URL,
       accounts: [process.env.GOERLI_PRIVATE_KEY],
     },
+    'base-goerli': {
+      url: 'https://goerli.base.org',
+      accounts: [process.env.GOERLI_PRIVATE_KEY],
+      gasPrice: 1000000000,
+    }
   },
 };
