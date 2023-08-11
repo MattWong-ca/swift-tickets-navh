@@ -19,7 +19,7 @@ export default function Upcomingevents() {
                             
                         </div> */}
 
-                        <div style={{ backgroundColor: 'red', height: '100px', position: 'relative' }}>
+                        <div style={{ height: '100px', position: 'relative' }}>
                             <img className={styles.backgroundimage} src="/images/tscardz.jpg" alt="Background" />
                             <img
                                 style={{
@@ -46,7 +46,7 @@ export default function Upcomingevents() {
                     </div>
 
                     <div className={styles.wcard}>
-                        <div style={{ backgroundColor: 'red', height: '100px', position: 'relative' }}>
+                        <div style={{ height: '100px', position: 'relative' }}>
                             {/* <img className={styles.backgroundimage} src="/images/tscardz.jpg"/> */}
                             <img style={{ width: '100px', marginTop: '30px', marginLeft: '30px', position: 'absolute', border: '3px solid black' }} src="/images/swiftw.webp" alt="Swift PFP 1" />
 

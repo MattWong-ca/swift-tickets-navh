@@ -5,7 +5,7 @@ import Navbar from '../components/navbar';
 import styles from '../styles/checkout.module.css';
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-// import supabase from '../utils/supabaseConfig';
+import supabase from '../utils/supabaseConfig';
 import { ethers } from 'ethers';
 import { useRouter } from 'next/router';
 
@@ -103,23 +103,23 @@ export default function Checkout() {
 		mintNftTicket();
 	};
 
-	// useEffect(() => {
-	// 	async function fetchUserVerificationStatus() {
-	// 		const userAddress = 'user_wallet_address'; //FIX THIS
-	// 		const { data, error } = await supabase
-	// 			.from('users')
-	// 			.select('isWorldcoinVerified')
-	// 			.eq('address', userAddress);
+	useEffect(() => {
+		async function fetchUserVerificationStatus() {
+			const userAddress = currentAccount; //FIX THIS
+			const { data, error } = await supabase
+				.from('users')
+				.select('isWorldcoinVerified')
+				.eq('address', userAddress);
 
-	// 		if (error) {
-	// 			// Handle error
-	// 		} else if (data && data.length > 0) {
-	// 			setUserVerified(data[0].isWorldcoinVerified);
-	// 		}
-	// 	}
+			if (error) {
+				// Handle error
+			} else if (data && data.length > 0) {
+				setUserVerified(data[0].isWorldcoinVerified);
+			}
+		}
 
-	// 	fetchUserVerificationStatus();
-	// }, []);
+		fetchUserVerificationStatus();
+	}, []);
 
 	return (
 		<div>
