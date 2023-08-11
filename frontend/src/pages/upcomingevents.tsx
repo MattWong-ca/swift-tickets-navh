@@ -28,9 +28,9 @@ export default function Upcomingevents() {
                                     top: '80%', // Position the square image vertically at 50% of the container
                                     left: '18%', // Position the square image horizontally at 50% of the container
                                     transform: 'translate(-50%, -50%)', // Center the square image
-                                    border: '2px solid white',
+                                    // border: '2px solid white',
                                 }}
-                                src="/images/swiftw.webp"
+                                src="/images/taylorswifteraspfp.jpeg"
                                 alt="Square Image"
                             />
                         </div>

@@ -58,7 +58,7 @@ const verifyEndpoint = `${process.env.NEXT_PUBLIC_WLD_API_BASE_URL}/api/v1/verif
 
 export default async function handler(
   req: NextApiRequest,
-  res: NextApiResponse<VerifyReply>
+  res: NextApiResponse
 ) {
   try {
     console.log("Received request to verify credential:\n", req.body);
@@ -89,16 +89,29 @@ export default async function handler(
         "Credential verified! This user's nullifier hash is: ",
         wldResponse.nullifier_hash
       );
+      console.log(wldResponse);
 
-      const userAddress = req.body.userAddress;
+
+
+      // const userAddress = req.body.userAddress;
       const { data, error } = await supabase
         .from('users')
-        .upsert([{ address: "0xB68918211aD90462FbCf75b77a30bF76515422CE", isWorldcoinVerified: true }], { onConflict: 'address' });
+        .upsert([{ address: "asdf", isWorldcoinVerified: true }]);
+
+      // const userAddress = req.body.userAddress;
+      // const { data, error } = await supabase
+      //   .from('users')
+      //   .upsert([{ address: "userAddress", isWorldcoinVerified: true }], { onConflict: 'address' });
+
+
+
+
 
       res.status(verifyRes.status).send({
         code: "success",
         detail: "This action verified correctly!",
       });
+      
     } else {
       // This is where you should handle errors from the World ID /verify endpoint. Usually these errors are due to an invalid credential or a credential that has already been used.
       // For this example, we'll just return the error code and detail from the World ID /verify endpoint.

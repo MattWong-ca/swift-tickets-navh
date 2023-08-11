@@ -103,23 +103,23 @@ export default function Checkout() {
 		mintNftTicket();
 	};
 
-	useEffect(() => {
-		async function fetchUserVerificationStatus() {
-			const userAddress = currentAccount; //FIX THIS
-			const { data, error } = await supabase
-				.from('users')
-				.select('isWorldcoinVerified')
-				.eq('address', userAddress);
+	// useEffect(() => {
+	// 	async function fetchUserVerificationStatus() {
+	// 		const userAddress = currentAccount; //FIX THIS
+	// 		const { data, error } = await supabase
+	// 			.from('users')
+	// 			.select('isWorldcoinVerified')
+	// 			.eq('address', userAddress);
 
-			if (error) {
-				// Handle error
-			} else if (data && data.length > 0) {
-				setUserVerified(data[0].isWorldcoinVerified);
-			}
-		}
+	// 		if (error) {
+	// 			// Handle error
+	// 		} else if (data && data.length > 0) {
+	// 			setUserVerified(data[0].isWorldcoinVerified);
+	// 		}
+	// 	}
 
-		fetchUserVerificationStatus();
-	}, []);
+	// 	fetchUserVerificationStatus();
+	// }, [currentAccount]);
 
 	return (
 		<div>
