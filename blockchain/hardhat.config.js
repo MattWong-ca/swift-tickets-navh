@@ -20,6 +20,11 @@ module.exports = {
     "optimism-goerli": {
       url: optimismGoerliUrl,
       accounts: [process.env.GOERLI_PRIVATE_KEY]
-    }
+    },
+    'zora-goerli': {
+      url: 'https://testnet.rpc.zora.energy/',
+      accounts: [process.env.GOERLI_PRIVATE_KEY],
+      gasPrice: 1000000000,
+    },
   },
 };
