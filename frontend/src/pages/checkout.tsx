@@ -7,13 +7,15 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 // import supabase from '../utils/supabaseConfig';
 import { ethers } from 'ethers';
-import goerliNFT from '../utils/goerliContract.json';
 import { useRouter } from 'next/router';
+
+import goerliNFT from '../utils/goerliContract.json';
+import baseNFT from '../utils/baseContract.json';
 
 declare var window: any
 const GOERLI_CONTRACT_ADDRESS = "0x46224855ce16B2a5A8DDFAb0578Da8828D43f601";
 const OP_CONTRACT_ADDRESS = "";
-const BASE_CONTRACT_ADDRESS = "";
+const BASE_CONTRACT_ADDRESS = "0x2A6123eEDea57303d2034f60A62C0C1529f06752";
 const ZORA_CONTRACT_ADDRESS = "";
 const MODE_CONTRACT_ADDRESS = "";
 
@@ -56,7 +58,7 @@ export default function Checkout() {
 	};
 
 	const mintNftTicket = async () => {
-		const MINT_PRICE = ethers.utils.parseEther("0.013");
+		const MINT_PRICE = ethers.utils.parseEther("0.00013");
 
 		try {
 			const { ethereum } = window;
@@ -64,7 +66,8 @@ export default function Checkout() {
 			if (ethereum) {
 				const provider = new ethers.providers.Web3Provider(ethereum);
 				const signer = provider.getSigner();
-				const connectedContract = new ethers.Contract(GOERLI_CONTRACT_ADDRESS, goerliNFT.abi, signer);
+				// CHANGE THESE DEPENDING ON THE CHAIN
+				const connectedContract = new ethers.Contract(BASE_CONTRACT_ADDRESS, baseNFT.abi, signer);
 
 				console.log("Going to pop wallet now to pay gas...")
 				let nftTxn = await connectedContract.mintNFTTicket({ value: MINT_PRICE, from: currentAccount})
