@@ -1,0 +1,35 @@
+.loaderContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.loader {
+    border: 16px solid #f3f3f3;
+    border-top: 16px solid #000000;
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 1s linear infinite;
+    margin-bottom: 20px;
+    /* Add margin to separate loader from text */
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.minting {
+    font-family: "Arial Narrow", Arial, sans-serif;
+    font-weight: 700;
+    font-size: 30px;
+    margin-bottom: 30px;
+}

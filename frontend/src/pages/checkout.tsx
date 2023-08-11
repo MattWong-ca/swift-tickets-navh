@@ -7,15 +7,21 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 // import supabase from '../utils/supabaseConfig';
 import { ethers } from 'ethers';
-import testNFT from '../utils/testNFT.json';
+import goerliNFT from '../utils/goerliContract.json';
+import { useRouter } from 'next/router';
 
 declare var window: any
-const CONTRACT_ADDRESS = "0x080a2d469e74670f7d9336A0589AA75148CDa173";
+const GOERLI_CONTRACT_ADDRESS = "0x46224855ce16B2a5A8DDFAb0578Da8828D43f601";
+const OP_CONTRACT_ADDRESS = "";
+const BASE_CONTRACT_ADDRESS = "";
+const ZORA_CONTRACT_ADDRESS = "";
+const MODE_CONTRACT_ADDRESS = "";
 
 export default function Checkout() {
 
 	const [userVerified, setUserVerified] = useState(false);
 	const [currentAccount, setCurrentAccount] = useState("");
+	const router = useRouter();
 
 	const onSuccess = (result: ISuccessResult) => {
 		// This is where you should perform frontend actions once a user has been verified, such as redirecting to a new page
@@ -50,25 +56,29 @@ export default function Checkout() {
 	};
 
 	const mintNftTicket = async () => {
+		const MINT_PRICE = ethers.utils.parseEther("0.013");
+
 		try {
 			const { ethereum } = window;
 
 			if (ethereum) {
 				const provider = new ethers.providers.Web3Provider(ethereum);
 				const signer = provider.getSigner();
-				const connectedContract = new ethers.Contract(CONTRACT_ADDRESS, testNFT.abi, signer);
+				const connectedContract = new ethers.Contract(GOERLI_CONTRACT_ADDRESS, goerliNFT.abi, signer);
 
 				console.log("Going to pop wallet now to pay gas...")
-				let nftTxn = await connectedContract.makeAnEpicNFT();
+				let nftTxn = await connectedContract.mintNFTTicket({ value: MINT_PRICE, from: currentAccount})
 
-				console.log("Mining...please wait.")
+				router.push('/loading');
+				console.log("Minting...please wait.")
 				await nftTxn.wait();
 
 				const accounts = await ethereum.request({ method: "eth_requestAccounts" });
 				setCurrentAccount(accounts[0]);
 				// console.log(currentAccount)
 
-				console.log(`Mined, see transaction: https://goerli.etherscan.io/tx/${nftTxn.hash}`);
+				console.log(`Minted, see transaction: https://goerli.etherscan.io/tx/${nftTxn.hash}`);
+				router.push('/upcomingevents');
 
 			} else {
 				console.log("Ethereum object doesn't exist!");
