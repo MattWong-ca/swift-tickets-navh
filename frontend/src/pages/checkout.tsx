@@ -11,10 +11,11 @@ import { useRouter } from 'next/router';
 
 import goerliNFT from '../utils/goerliContract.json';
 import baseNFT from '../utils/baseContract.json';
+import opNFT from '../utils/opContract.json';
 
 declare var window: any
 const GOERLI_CONTRACT_ADDRESS = "0x46224855ce16B2a5A8DDFAb0578Da8828D43f601";
-const OP_CONTRACT_ADDRESS = "";
+const OP_CONTRACT_ADDRESS = "0xb861d6d79123ADa308E5F4030F458b402E2D131A";
 const BASE_CONTRACT_ADDRESS = "0x2A6123eEDea57303d2034f60A62C0C1529f06752";
 const ZORA_CONTRACT_ADDRESS = "";
 const MODE_CONTRACT_ADDRESS = "";
@@ -58,7 +59,7 @@ export default function Checkout() {
 	};
 
 	const mintNftTicket = async () => {
-		const MINT_PRICE = ethers.utils.parseEther("0.00013");
+		const MINT_PRICE = ethers.utils.parseEther("0.013");
 
 		try {
 			const { ethereum } = window;
@@ -67,7 +68,7 @@ export default function Checkout() {
 				const provider = new ethers.providers.Web3Provider(ethereum);
 				const signer = provider.getSigner();
 				// CHANGE THESE DEPENDING ON THE CHAIN
-				const connectedContract = new ethers.Contract(BASE_CONTRACT_ADDRESS, baseNFT.abi, signer);
+				const connectedContract = new ethers.Contract(OP_CONTRACT_ADDRESS, opNFT.abi, signer);
 
 				console.log("Going to pop wallet now to pay gas...")
 				let nftTxn = await connectedContract.mintNFTTicket({ value: MINT_PRICE, from: currentAccount})
