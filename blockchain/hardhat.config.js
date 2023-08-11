@@ -2,6 +2,9 @@ require("@nomicfoundation/hardhat-toolbox");
 require("dotenv").config();
 
 /** @type import('hardhat/config').HardhatUserConfig */
+
+const optimismGoerliUrl = process.env.ALCHEMY_API_KEY
+
 module.exports = {
   solidity: '0.8.17',
   networks: {
@@ -13,6 +16,10 @@ module.exports = {
       url: 'https://goerli.base.org',
       accounts: [process.env.GOERLI_PRIVATE_KEY],
       gasPrice: 1000000000,
+    },
+    "optimism-goerli": {
+      url: optimismGoerliUrl,
+      accounts: [process.env.GOERLI_PRIVATE_KEY]
     }
   },
 };
