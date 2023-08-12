@@ -4,7 +4,7 @@
     font-size: 30px;
     margin-top: 40px;
     margin-left: 40px;
-    margin-bottom: 20px;;
+    margin-bottom: 20px;
 }
 
 .ordersummary {
@@ -12,17 +12,13 @@
     font-weight: 700;
     font-size: 30px;
     margin-top: 40px;
-    /* margin-left: 40px; */
     margin-bottom: 20px;
 }
 
 .questiontext {
     font-family: "Arial Narrow", Arial, sans-serif;
-    /* font-weight: 700; */
     font-size: 20px;
-    /* margin-top: 40px; */
     margin-left: 40px;
-    /* margin-bottom: 20px;; */
 }
 
 .worldcoinbutton {
@@ -67,7 +63,6 @@
     box-sizing: border-box;
     border: 3px solid white;
     color: white;
-    cursor: pointer;
     display: inline-flex;
     justify-content: center;
     line-height: 1;
@@ -85,18 +80,18 @@
     border: 3px solid rgb(132, 132, 132);
     width: 300px;
     padding-left: 5px;
-    /* background-color: rgb(238, 238, 238); */
     outline: none;
 }
 
 .inputfield:focus {
     border-color: black;
-  }
+}
 
 .formlabels {
     font-family: "Arial Narrow", Arial, sans-serif;
     font-size: 20px;
 }
+
 .formGroup {
     margin-top: 15px;
 }
@@ -138,16 +133,17 @@
 }
 
 .halfPage {
-    flex: 1; /* Take up equal space */
-    width: 50%; /* Use half of the available width */
-    padding: 20px; /* Optional: Add padding for spacing */
-  }
+    flex: 1;
+    /* Take up equal space */
+    width: 50%;
+    /* Use half of the available width */
+    padding: 20px;
+    /* Optional: Add padding for spacing */
+}
 
-  .wcard {
-    /* background-color: gray; */
+.wcard {
     border: 3px solid black;
     height: 200px;
-    /* margin-left: 20px; */
     width: 600px;
     position: relative;
     display: flex;
@@ -160,19 +156,19 @@
 
 .totalText {
     text-align: left;
-  }
-  
-  .totalAmount {
+}
+
+.totalAmount {
     text-align: right;
-  }
+}
 
-  .holder {
+.holder {
     display: flex;
-  justify-content: space-between; /* Align items at the beginning and end, with space in between */
-  margin-top: 50px; 
-  width: 600px;
+    justify-content: space-between;
+    margin-top: 50px;
+    width: 600px;
 
-  font-family: "Arial Narrow", Arial, sans-serif;
+    font-family: "Arial Narrow", Arial, sans-serif;
     font-weight: 700;
     font-size: 30px;
-  }
+}

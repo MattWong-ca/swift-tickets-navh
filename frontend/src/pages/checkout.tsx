@@ -75,7 +75,7 @@ export default function Checkout() {
 				const connectedContract = new ethers.Contract(MODE_CONTRACT_ADDRESS, modeNFT.abi, signer);
 
 				console.log("Going to pop wallet now to pay gas...")
-				let nftTxn = await connectedContract.mintNFTTicket({ value: MINT_PRICE, from: currentAccount})
+				let nftTxn = await connectedContract.mintNFTTicket({ value: MINT_PRICE, from: currentAccount })
 
 				router.push('/loading');
 				console.log("Minting...please wait.")
@@ -125,39 +125,39 @@ export default function Checkout() {
 	useEffect(() => {
 		const checkIfWalletIsConnected = async () => {
 			const { ethereum } = window;
-		
+
 			if (!ethereum) {
-			  console.log("Make sure you have metamask!");
-			  return;
+				console.log("Make sure you have metamask!");
+				return;
 			} else {
-			  console.log("We have the ethereum object", ethereum);
+				console.log("We have the ethereum object", ethereum);
 			}
-		
-		// 	// Get the chainId
-		//   let chainId = await ethereum.request({ method: 'eth_chainId' });
-		//   console.log("Connected to chain " + chainId);
-		
-		//   // String, hex code of the chainId of the Goerli test network
-		//   const goerliChainId = "0x5";
-		//   if (chainId !== goerliChainId) {
-		// 	alert("You are not connected to the Goerli Test Network!");
-		// 	return;
-		//   }
-		
-		/*
-		  * Check if we're authorized to access the user's wallet
-		  */
-		  const accounts = await ethereum.request({ method: 'eth_accounts'});
-		  if (accounts.length !== 0) {
-			const account = accounts[0];
-			console.log("Found an authorized account:", account);
-			setCurrentAccount(account);
-		
-		  } else {
-			console.log("No authorized account found");
-		  }
-		  }
-		  checkIfWalletIsConnected();
+
+			// 	// Get the chainId
+			//   let chainId = await ethereum.request({ method: 'eth_chainId' });
+			//   console.log("Connected to chain " + chainId);
+
+			//   // String, hex code of the chainId of the Goerli test network
+			//   const goerliChainId = "0x5";
+			//   if (chainId !== goerliChainId) {
+			// 	alert("You are not connected to the Goerli Test Network!");
+			// 	return;
+			//   }
+
+			/*
+			  * Check if we're authorized to access the user's wallet
+			  */
+			const accounts = await ethereum.request({ method: 'eth_accounts' });
+			if (accounts.length !== 0) {
+				const account = accounts[0];
+				console.log("Found an authorized account:", account);
+				setCurrentAccount(account);
+
+			} else {
+				console.log("No authorized account found");
+			}
+		}
+		checkIfWalletIsConnected();
 	});
 
 	return (
