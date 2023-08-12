@@ -1,6 +1,6 @@
 import Navbar from '../components/navbar';
 import styles from '../styles/upcomingevents.module.css';
-import WorldcoinButton from './checkout';
+import WorldcoinButton from './checkoutz';
 import Link from 'next/link';
 
 export default function Upcomingevents() {
@@ -34,8 +34,7 @@ export default function Upcomingevents() {
                         <p style={{ marginTop: '40px', marginLeft: '30px', fontFamily: '"Arial Narrow", Arial, sans-serif', fontWeight: 'bold', fontSize: '30px' }}>The Eras Tour - Section Z</p>
                         <p style={{ marginLeft: '30px', fontFamily: 'Arial Mono, monospace', color: '#777777' }}>Toronto, CA | Nov 15 2024</p>
                         <div className={styles.worldcoinbutton}/*style={{ marginLeft: '30px', marginTop: '25px', fontFamily: '"Arial Narrow", Arial, sans-serif', fontWeight: '700', border: '3px solid black', borderRadius: '0' }}*/>
-                            {/* <button>PURCHASE TICKET</button> */}
-                            <Link href="/checkout">
+                            <Link href="/checkoutz">
                                 <button role="button">PURCHASE TICKET</button>
                             </Link>
                         </div>
@@ -62,8 +61,7 @@ export default function Upcomingevents() {
                         <p style={{ marginTop: '40px', marginLeft: '30px', fontFamily: '"Arial Narrow", Arial, sans-serif', fontWeight: 'bold', fontSize: '30px' }}>The Eras Tour - Section B</p>
                         <p style={{ marginLeft: '30px', fontFamily: 'Arial Mono, monospace', color: '#777777' }}>Toronto, CA | Nov 15 2024</p>
                         <div className={styles.worldcoinbutton}/*style={{ marginLeft: '30px', marginTop: '25px', fontFamily: '"Arial Narrow", Arial, sans-serif', fontWeight: '700', border: '3px solid black', borderRadius: '0' }}*/>
-                            {/* <button>PURCHASE TICKET</button> */}
-                            <Link href="/checkout">
+                            <Link href="/checkoutb">
                                 <button role="button">PURCHASE TICKET</button>
                             </Link>
                         </div>
@@ -91,7 +89,7 @@ export default function Upcomingevents() {
                         <p style={{ marginLeft: '30px', fontFamily: 'Arial Mono, monospace', color: '#777777' }}>Toronto, CA | Nov 15 2024</p>
                         <div className={styles.worldcoinbutton}/*style={{ marginLeft: '30px', marginTop: '25px', fontFamily: '"Arial Narrow", Arial, sans-serif', fontWeight: '700', border: '3px solid black', borderRadius: '0' }}*/>
                             {/* <button>PURCHASE TICKET</button> */}
-                            <Link href="/checkout">
+                            <Link href="/checkouto">
                                 <button role="button">PURCHASE TICKET</button>
                             </Link>
                         </div>
@@ -122,7 +120,7 @@ export default function Upcomingevents() {
                         <p style={{ marginLeft: '30px', fontFamily: 'Arial Mono, monospace', color: '#777777' }}>Toronto, CA | Nov 15 2024</p>
                         <div className={styles.worldcoinbutton}/*style={{ marginLeft: '30px', marginTop: '25px', fontFamily: '"Arial Narrow", Arial, sans-serif', fontWeight: '700', border: '3px solid black', borderRadius: '0' }}*/>
                             {/* <button>PURCHASE TICKET</button> */}
-                            <Link href="/checkout">
+                            <Link href="/checkoutm">
                                 <button role="button">PURCHASE TICKET</button>
                             </Link>
                         </div>
@@ -148,7 +146,7 @@ export default function Upcomingevents() {
                         <p style={{ marginTop: '40px', marginLeft: '30px', fontFamily: '"Arial Narrow", Arial, sans-serif', fontWeight: 'bold', fontSize: '30px' }}>The Eras Tour - Section W</p>
                         <p style={{ marginLeft: '30px', fontFamily: 'Arial Mono, monospace', color: '#777777' }}>Toronto, CA | Nov 15 2024</p>
                         <div className={styles.worldcoinbutton}/*style={{ marginLeft: '30px', marginTop: '25px', fontFamily: '"Arial Narrow", Arial, sans-serif', fontWeight: '700', border: '3px solid black', borderRadius: '0' }}*/>
-                            <Link href="/checkout">
+                            <Link href="/checkoute">
                                 <button role="button">PURCHASE TICKET</button>
                             </Link>
                         </div>

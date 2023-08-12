@@ -60,7 +60,9 @@ export default function Navbar() {
 
     return (
         <div className={styles.navbar}>
-            <img className={styles.logo} src="/images/logo.png" alt="Swift Tickets Logo" />
+            <a href="/">
+                <img className={styles.logo} src="/images/logo.png" alt="Swift Tickets Logo" />
+            </a>
             <p className={styles.truncatedAddress}>{truncateAddress(currentAccount)}</p>
             {!currentAccount && (
                 <button className={styles.connectwallet} role="button" onClick={connectWallet}>CONNECT WALLET</button>

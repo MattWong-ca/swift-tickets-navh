@@ -9,18 +9,10 @@ import supabase from '../utils/supabaseConfig';
 import { ethers } from 'ethers';
 import { useRouter } from 'next/router';
 
-import goerliNFT from '../utils/goerliContract.json';
-import baseNFT from '../utils/baseContract.json';
-import opNFT from '../utils/opContract.json';
-import zoraNFT from '../utils/zoraContract.json';
 import modeNFT from '../utils/modeContract.json';
 
 declare var window: any
 
-const GOERLI_CONTRACT_ADDRESS = "0x46224855ce16B2a5A8DDFAb0578Da8828D43f601";
-const OP_CONTRACT_ADDRESS = "0xb861d6d79123ADa308E5F4030F458b402E2D131A";
-const BASE_CONTRACT_ADDRESS = "0x2A6123eEDea57303d2034f60A62C0C1529f06752";
-const ZORA_CONTRACT_ADDRESS = "0x2A6123eEDea57303d2034f60A62C0C1529f06752";
 const MODE_CONTRACT_ADDRESS = "0xb861d6d79123ADa308E5F4030F458b402E2D131A";
 
 export default function Checkout() {
@@ -86,7 +78,7 @@ export default function Checkout() {
 				// console.log(currentAccount)
 
 				console.log(`Minted, see transaction: https://goerli.etherscan.io/tx/${nftTxn.hash}`);
-				router.push('/upcomingevents');
+				router.push('/confirmation');
 
 			} else {
 				console.log("Ethereum object doesn't exist!");
@@ -101,7 +93,11 @@ export default function Checkout() {
 
 		// Need to save form data here (fetch to backend)
 
-		mintNftTicket();
+		if (userVerified) {
+			mintNftTicket();
+		} else {
+			window.alert("Must verify with World ID first!")
+		}
 	};
 
 	useEffect(() => {
@@ -133,20 +129,14 @@ export default function Checkout() {
 				console.log("We have the ethereum object", ethereum);
 			}
 
-			// 	// Get the chainId
-			//   let chainId = await ethereum.request({ method: 'eth_chainId' });
-			//   console.log("Connected to chain " + chainId);
+			let chainId = await ethereum.request({ method: 'eth_chainId' });
+			console.log("Connected to chain " + chainId);
 
-			//   // String, hex code of the chainId of the Goerli test network
-			//   const goerliChainId = "0x5";
-			//   if (chainId !== goerliChainId) {
-			// 	alert("You are not connected to the Goerli Test Network!");
-			// 	return;
-			//   }
+			if (chainId !== "0x397") {
+				alert("You are not connected to Mode Testnet!");
+				return;
+			}
 
-			/*
-			  * Check if we're authorized to access the user's wallet
-			  */
 			const accounts = await ethereum.request({ method: 'eth_accounts' });
 			if (accounts.length !== 0) {
 				const account = accounts[0];
