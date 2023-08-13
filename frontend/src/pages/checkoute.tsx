@@ -54,7 +54,7 @@ export default function Checkout() {
 	};
 
 	const mintNftTicket = async () => {
-		const MINT_PRICE = ethers.utils.parseEther("0.13");
+		const MINT_PRICE = ethers.utils.parseEther("0.013");
 
 		try {
 			const { ethereum } = window;
