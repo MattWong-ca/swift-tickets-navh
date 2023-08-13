@@ -6,7 +6,7 @@ export default function Home() {
 
 	return (
 		<div>
-			<Navbar/>
+			<Navbar />
 			<div className={styles.background}>
 				<div className={styles.landingcopy}>
 					<p className={styles.title}>SWIFT TICKETS</p>
@@ -41,6 +41,29 @@ export default function Home() {
 					<p className={styles.botstext}>With our platform, users can only purchase Swift tickets if they verify with World ID, preventing bots from accessing the page.</p>
 				</div>
 			</div>
+
+			<div className={styles.black}>
+				<p className={styles.poweredby}>POWERED BY</p>
+				<div className={styles.logocarousel}>
+					<div className={styles.logoslide}>
+						<img style={{ filter: 'brightness(0) invert(1)' }} src="/images/worldcoin.svg" />
+						<img style={{ filter: 'brightness(0) invert(1)' }} src="/images/base.svg" />
+						<img src="/images/op.png" />
+						<img style={{ filter: 'brightness(0) invert(1)' }} src="/images/zora.svg" />
+						<img src="/images/modenetwork.svg" />
+					</div>
+
+					<div className={styles.logoslide}>
+						<img style={{ filter: 'brightness(0) invert(1)' }} src="/images/worldcoin.svg" />
+						<img style={{ filter: 'brightness(0) invert(1)' }} src="/images/base.svg" />
+						<img src="/images/op.png" />
+						<img style={{ filter: 'brightness(0) invert(1)' }} src="/images/zora.svg" />
+						<img src="/images/modenetwork.svg" />
+					</div>
+				</div>
+			</div>
+
+
 		</div>
 	);
 }

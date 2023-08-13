@@ -1,0 +1,79 @@
+/* Logo carousel made by following Youtube tutorial */
+/* .logocarousel {
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+    margin-top: 200px;
+    display: flex;
+  } */
+  .logos {
+    /* white-space: nowrap; */
+    overflow: hidden;
+    /* display: inline-block; */
+    /* background: white; */
+    white-space: nowrap;
+    /* position: relative; */
+
+    /* margin: 0;
+    padding: 0;
+    box-sizing: border-box; */
+  }
+  
+  /* .logocarousel:before,
+  .logocarousel:after {
+    position: absolute;
+    top: 0;
+    width: 250px;
+    height: 100%;
+    content: "";
+    z-index: 2;
+  } */
+  
+  /* .logocarousel:before {
+    left: 0;
+    background: linear-gradient(to left, rgba(255, 255, 255, 0), white);
+  }
+  
+  .logocarousel:after {
+    right: 0;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0), white);
+  } */
+  
+  /* .logocarousel:hover .logoslide {
+    animation-play-state: paused;
+  } */
+  
+  .logoslide {
+    /* display: inline-block; */
+    animation: 40s slide infinite linear;
+
+    /* white-space: nowrap; */
+    display: inline-flex;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  .logoslide img {
+    height: 50px;
+    margin: 0 40px;
+  }
+  
+  @keyframes slide {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-100%);
+    }
+  }
+
+  .landingpage {
+    background: radial-gradient(#6e108a, #0b0344);
+    height: 100vh;
+  }
+
+  .landingpagecontainer {
+    justify-content: center;
+    margin-top: 100px;
+  }
