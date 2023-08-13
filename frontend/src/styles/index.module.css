@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Xanh+Mono&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Xanh+Mono&display=swap'); */
 
 .background {
   background-image: url('/images/backgroundimage.jpeg');
@@ -22,7 +22,7 @@
 
 .tagline {
   font-family: 'Xanh Mono', monospace;
-  font-weight: bold;
+  /* font-weight: bold; */
   font-size: 30px;
 }
 
@@ -100,7 +100,7 @@
 
 .botstext {
   font-family: 'Xanh Mono', monospace;
-  font-weight: bold;
+  /* font-weight: bold; */
   font-size: 25px;
   margin-top: 30px;
   margin-right: 40px;
@@ -127,7 +127,7 @@
 
 .summertext {
   font-family: 'Xanh Mono', monospace;
-  font-weight: bold;
+  /* font-weight: bold; */
   font-size: 25px;
   margin-top: 30px;
   margin-left: 40px;
