@@ -14,7 +14,6 @@
     height: 120px;
     animation: spin 1s linear infinite;
     margin-bottom: 20px;
-    /* Add margin to separate loader from text */
 }
 
 @keyframes spin {

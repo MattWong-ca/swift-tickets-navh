@@ -1,5 +1,3 @@
-/* @import url('https://fonts.googleapis.com/css2?family=Xanh+Mono&display=swap'); */
-
 .background {
   background-image: url('/images/backgroundimage.jpeg');
   background-size: cover;
@@ -22,7 +20,6 @@
 
 .tagline {
   font-family: 'Xanh Mono', monospace;
-  /* font-weight: bold; */
   font-size: 30px;
 
   font-weight: normal;
@@ -103,7 +100,6 @@
 
 .botstext {
   font-family: 'Xanh Mono', monospace;
-  /* font-weight: bold; */
   font-weight: normal;
   text-shadow: 0.02em 0 #000;
   font-size: 25px;
@@ -117,9 +113,6 @@
   margin-right: 40px;
 }
 
-
-
-
 .summer {
   font-family: "Arial Narrow", Arial, sans-serif;
   font-weight: bold;
@@ -132,7 +125,6 @@
 
 .summertext {
   font-family: 'Xanh Mono', monospace;
-  /* font-weight: bold; */
   font-weight: normal;
   text-shadow: 0.02em 0 #000;
   font-size: 25px;
@@ -184,7 +176,6 @@
     transform: translateX(-100%);
   }
 }
-
 
 .poweredby {
   font-family: "Arial Narrow", Arial, sans-serif;

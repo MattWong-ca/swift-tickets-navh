@@ -14,7 +14,7 @@ declare var window: any
 
 const GOERLI_CONTRACT_ADDRESS = "0x46224855ce16B2a5A8DDFAb0578Da8828D43f601";
 
-export default function Checkout() {
+export default function CheckoutE() {
 
 	const [userVerified, setUserVerified] = useState(false);
 	const [currentAccount, setCurrentAccount] = useState("");
@@ -101,7 +101,7 @@ export default function Checkout() {
 
 	useEffect(() => {
 		async function fetchUserVerificationStatus() {
-			const userAddress = currentAccount; //FIX THIS
+			const userAddress = currentAccount;
 			const { data, error } = await supabase
 				.from('users')
 				.select('isWorldcoinVerified')

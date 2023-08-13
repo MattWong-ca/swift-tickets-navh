@@ -37,15 +37,7 @@ export default function Confirmation() {
 			<div className={styles.backgroundContainer}>
 				<div className={styles.confirmed}>
 					<p className={styles.ticketconfirmed}>TICKET CONFIRMED! 🥳</p>
-					<img
-						style={{
-							width: '300px',
-							border: '2px solid black',
-							marginBottom: '20px'
-						}}
-						src="/images/taylorswifteraspfp.jpeg"
-						alt="Square Image"
-					/>
+					<img style={{ width: '300px', border: '2px solid black', marginBottom: '20px' }} src="/images/taylorswifteraspfp.jpeg" alt="Square Image"/>
 					<p className={styles.minting}>CHECK IT OUT ON <a href={'https://testnets.opensea.io/' + currentAccount} target="_blank" rel="noopener noreferrer" className={styles.link}>OPENSEA</a></p>
 				</div>
 			</div>

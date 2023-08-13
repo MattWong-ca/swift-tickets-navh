@@ -133,12 +133,9 @@
 }
 
 .halfPage {
-    flex: 1;
-    /* Take up equal space */
-    width: 50%;
-    /* Use half of the available width */
-    padding: 20px;
-    /* Optional: Add padding for spacing */
+    flex: 1; /* Take up equal space */
+    width: 50%; /* Use half of the available width */
+    padding: 20px; /* Optional: Add padding for spacing */
 }
 
 .wcard {

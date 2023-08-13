@@ -14,7 +14,7 @@ declare var window: any
 
 const OP_CONTRACT_ADDRESS = "0xb861d6d79123ADa308E5F4030F458b402E2D131A";
 
-export default function Checkout() {
+export default function CheckoutO() {
 
 	const [userVerified, setUserVerified] = useState(false);
 	const [currentAccount, setCurrentAccount] = useState("");
@@ -101,7 +101,7 @@ export default function Checkout() {
 
 	useEffect(() => {
 		async function fetchUserVerificationStatus() {
-			const userAddress = currentAccount; //FIX THIS
+			const userAddress = currentAccount;
 			const { data, error } = await supabase
 				.from('users')
 				.select('isWorldcoinVerified')
@@ -168,8 +168,8 @@ export default function Checkout() {
 							autoClose
 						>
 							{({ open }) =>
-								<button className={styles.worldcoinbutton}/*className="border border-black rounded-md"*/ onClick={open}>
-									<div /*className="mx-3 my-1"*/>I'M HUMAN</div>
+								<button className={styles.worldcoinbutton} onClick={open}>
+									<div>I'M HUMAN</div>
 								</button>
 							}
 						</IDKitWidget>
@@ -179,7 +179,6 @@ export default function Checkout() {
 						<div className={styles.verified}>VERIFIED</div>
 					)}
 
-					{/* <p className={styles.questiontext} style={{ marginTop: '30px' }}>Full name</p> */}
 					<form style={{ marginTop: '50px', marginLeft: '40px' }} onSubmit={handleSubmit}>
 						<div className={styles.formGroup}>
 							<label className={styles.formlabels}>Full name</label>
@@ -211,7 +210,6 @@ export default function Checkout() {
 					<p className={styles.ordersummary}>ORDER SUMMARY</p>
 
 					<div className={styles.wcard}>
-						{/* <div> */}
 						<img style={{ borderRight: '3px solid black' }} src="/images/eras.jpeg"></img>
 						<div>
 							<p style={{ marginTop: '20px', marginLeft: '30px', fontFamily: '"Arial Narrow", Arial, sans-serif', fontWeight: 'bold', fontSize: '30px' }}>The Eras Tour - Nov 15 2024</p>
@@ -219,16 +217,12 @@ export default function Checkout() {
 							<p style={{ marginLeft: '30px', marginTop: '5px', fontFamily: 'Arial Mono, monospace', color: 'black' }}>Section Z, Row 1, Seat 3</p>
 							<p style={{ marginLeft: '30px', marginTop: '5px', fontFamily: 'Arial Mono, monospace', color: 'black' }}>7:00 PM ET</p>
 						</div>
-
-
-
 					</div>
 					<div className={styles.holder}>
 						<span className={styles.totalText}>TOTAL</span>
 						<span className={styles.totalAmount}>0.013 ETH</span>
 					</div>
 				</div>
-
 			</div>
 		</div>
 	);

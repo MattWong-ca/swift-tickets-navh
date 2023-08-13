@@ -14,7 +14,7 @@ declare var window: any
 
 const BASE_CONTRACT_ADDRESS = "0x2A6123eEDea57303d2034f60A62C0C1529f06752";
 
-export default function Checkout() {
+export default function CheckoutB() {
 
     const [userVerified, setUserVerified] = useState(false);
     const [currentAccount, setCurrentAccount] = useState("");
