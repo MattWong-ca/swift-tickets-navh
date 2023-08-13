@@ -13,7 +13,7 @@ import zoraNFT from '../utils/zoraContract.json';
 
 declare var window: any
 
-const ZORA_CONTRACT_ADDRESS = "0x2A6123eEDea57303d2034f60A62C0C1529f06752";
+const ZORA_CONTRACT_ADDRESS = "0x8a204761fFb6eDD676eC28849De46D5e59F87fE1";
 
 export default function Checkout() {
 
