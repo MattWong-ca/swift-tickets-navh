@@ -27,6 +27,8 @@ Swift Tickets is an events platform that leverages Worldcoin's World ID to disco
 - Worldcoin's World ID for bot prevention
 - Deployed on the Superchain (Optimism, Base, Zora, Mode)
 - Supabase for World ID web backend verification
+- NFT metadata stored on IPFS through Pinata
+- Alchemy and QuickNode for RPC endpoints
 
 ### Tickets
 The tickets are all deployed on different chains, separated by seat sections! For example, at a stadium there's 100 level, 200 level, etc. and seat sections in each. Each of these sections have tickets deployed on a different chain, which leverages the Superchain's horizontal scaling to provide more accessibility to users in case they're on another network. If 10s of thousands of Swifties are trying to mint an NFT at the same time, it might even help with congestion/gas fees! Deployments were made using Hardhat, with networks in `/blockchain/hardhat.config.js`.
