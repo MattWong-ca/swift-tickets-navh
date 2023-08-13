@@ -22,7 +22,7 @@ With Swift Tickets' use of World ID, only **real** humans can buy tickets! This 
 There’s been privacy concerns with Worldcoin, but Swifties will literally do anything to get a ticket—in the future, I'll implement different verification levels based on orb / phone verification, which can differentiate their chances of getting in by how much we're able to prove they're human.
 
 # 🏗️ How it's Made
-Swift Tickets is an events platform that leverages Worldcoin's World ID to discourage ticket scalpers + prevent bots from buying Taylor Swift concert tickets. 
+Swift Tickets is an events platform that leverages Worldcoin's World ID to discourage ticket scalpers + prevent bots from buying Taylor Swift concert tickets. Every sponsor tech's integration in this dapp was intentionally and thoughfully chosen to provide a _seamless_ user experience.
 
 - Worldcoin's World ID for bot prevention
 - Deployed on the Superchain (Optimism, Base, Zora, Mode)
@@ -30,8 +30,34 @@ Swift Tickets is an events platform that leverages Worldcoin's World ID to disco
 
 ### Tickets
 
+
 ### Checkout with World ID
+onchain soon
 
 ### Overall Dapp
+- Next.js app frontend built with TypeScript and HTML/CSS, with a `verify.ts` API route for World ID verification.
+- Hardhat project for deploying Solidity smart contracts.
+- Design + branding was inspired by Zora!
 
 ### Deployed Contracts
+- [Zora Goerli](https://testnet.explorer.zora.energy/address/0x8a204761ffb6edd676ec28849de46d5e59f87fe1)
+- [Base Goerli](https://goerli.basescan.org/address/0x2a6123eedea57303d2034f60a62c0c1529f06752)
+- [Optimism Goerli](https://goerli-optimism.etherscan.io/address/0xb861d6d79123ada308e5f4030f458b402e2d131a)
+- [Mode Testnet](https://sepolia.explorer.mode.network/address/0xb861d6d79123ADa308E5F4030F458b402E2D131A)
+- [Goerli](https://goerli.etherscan.io/address/0x46224855ce16b2a5a8ddfab0578da8828d43f601)
+
+# 🚀 Next Steps
+### QR Code Ticket
+Currently it's only a NFT ticket, but there's no QR code for user's to actually get into the event! Usually QR codes are sent by email, so I'll want to implement this so that a QR code is emailed when they purchase the NFT ticket.
+
+### World ID Proof Onchain
+To the make the dapp fully onchain, I'll scrap the Supabase backend for onchain proofs.
+
+### Option To Use USDC Or Fiat
+If users don't want to pay with ETH, they should be able to buy tickets with USDC (or other stablecoins) and fiat.
+
+### Option To Buy More Than 1 Ticket
+There's currently no option to buy more than 1 ticket unless you redo the entire process, which is a pain. Ticketmaster allows fans to buy a maximum of four Eras tickets, so I'll need to add a # of tickets option.
+
+### Create Event Feature
+The target initial customers are more well-known artists like Taylor Swift, which is where the ticket scalpers + bots are. They won't be trying to bot a small event (eg. ETHDenver side event), so World ID is most useful for highly anticipated events like concerts + sporting events.
