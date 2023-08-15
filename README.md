@@ -2,8 +2,7 @@
 
 <img width="1440" alt="Swift Tickets Cover" src="https://github.com/MattWong-ca/swift-tickets/assets/66754344/64d29ae3-f3db-4b0c-ac7c-a4638b210a28">
 
-### 🔗 Live demo: https://swift-tickets.vercel.app
-### 🔗 ETHGlobal showcase: https://ethglobal.com/showcase/swift-tickets-taylors-version-zvhsz
+### WIP, will submit to NAVH!
 
 # 🤖 "It's Me, Hi, I'm The Problem, It's Me"
 You've likely heard of Ticketmaster’s inability to handle bots, especially in November '22 when fans waited HOURS (just to get nothing), or most recently in August '23, when their Eras Tour Verified Fan program was basically a lottery ticket—thousands of fans were waitlisted.
