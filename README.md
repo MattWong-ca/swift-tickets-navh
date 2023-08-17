@@ -1,6 +1,6 @@
 # 🎤 Swift Tickets (Taylor's Version)
 
-<img width="1440" alt="Swift Tickets Cover" src="https://github.com/MattWong-ca/swift-tickets/assets/66754344/64d29ae3-f3db-4b0c-ac7c-a4638b210a28">
+[Insert image soon]
 
 ### WIP, will submit to NAVH!
 
@@ -22,6 +22,8 @@ There’s been privacy concerns with Worldcoin, but Swifties will literally do a
 
 # 🏗️ How it's Made
 Swift Tickets is an events platform that leverages Worldcoin's World ID to discourage ticket scalpers + prevent bots from buying Taylor Swift concert tickets. Every sponsor tech's integration in this dapp was intentionally and thoughfully chosen to provide a _seamless_ user experience.
+
+[Insert Consensys products]
 
 - Worldcoin's World ID for bot prevention
 - Deployed on the Superchain (Optimism, Base, Zora, Mode)
@@ -49,7 +51,7 @@ The key value prop of this platform is using World ID to prevent bots. The UI/UX
 - [Mode Testnet](https://sepolia.explorer.mode.network/address/0xb861d6d79123ADa308E5F4030F458b402E2D131A)
 - [Goerli](https://goerli.etherscan.io/address/0x46224855ce16b2a5a8ddfab0578da8828d43f601)
 
-# 🚀 Next Steps
+# 🚀 Future Plans
 ### QR Code Ticket
 Currently it's only a NFT ticket, but there's no QR code for user's to actually get into the event! Usually QR codes are sent by email, so I'll want to implement this so that a QR code is emailed when they purchase the NFT ticket.
 
