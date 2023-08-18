@@ -1,6 +1,7 @@
 import styles from './navbar.module.css';
 import { useState, useEffect } from 'react';
 import { ethers } from "ethers";
+import { MetaMaskSDK } from '@metamask/sdk';
 
 declare var window: any
 
@@ -15,6 +16,10 @@ function truncateAddress(address: string): string {
 }
 
 export default function Navbar() {
+
+    const MMSDK = new MetaMaskSDK();
+    
+    const ethereum = MMSDK.getProvider();
 
     const [currentAccount, setCurrentAccount] = useState("");
 
@@ -32,22 +37,6 @@ export default function Navbar() {
 
             // console.log("Connected", accounts[0]);
             setCurrentAccount(accounts[0]);
-
-            // i'm only doing this because it's not in checkout, once it's there this ain't needed
-            // fetch('/api/verify', {
-            //     method: 'POST',
-            //     headers: {
-            //         'Content-Type': 'application/json',
-            //     },
-            //     body: JSON.stringify({ currentAccount: accounts[0] }), // Use accounts[0] directly
-            // })
-            //     .then((response) => response.json())
-            //     .then((data) => {
-            //         // Handle response from backend
-            //     })
-            //     .catch((error) => {
-            //         // Handle error
-            //     });
 
         } catch (error) {
             console.error(error);
