@@ -1,1 +1,41 @@
-node_modules
+# OS-specific
+.DS_Store
+Thumbs.db
+
+# Compiled contracts and build artifacts
+/build/
+
+# Truffle-specific
+.truffle/
+.truffle-config.js
+.truffle-temp/
+.truffle-hardhat/
+
+# Local environment variables
+.env
+
+# Node.js
+node_modules/
+
+# Truffle HDWalletProvider mnemonic backup
+.truffle_mnemonic
+
+# Dependency lock files
+yarn.lock
+package-lock.json
+
+# User-specific files
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Log files
+*.log
+
+# IDE-specific files
+.idea/
+.vscode/
+
+# Test coverage
+coverage/
