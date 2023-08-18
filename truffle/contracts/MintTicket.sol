@@ -4,7 +4,6 @@ pragma solidity ^0.8.17;
 
 import "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
-import "hardhat/console.sol";
 
 contract MintTicket is ERC721URIStorage, Ownable {
     // Counter to keep track of minted tickets.
@@ -14,9 +13,7 @@ contract MintTicket is ERC721URIStorage, Ownable {
     uint256 public MINT_PRICE = 0.013 ether;
 
     // We need to pass the name of our NFTs token and its symbol.
-    constructor() ERC721("Swift Tickets (Taylor's Version)", "SWIFT") {
-        console.log("Please work!");
-    }
+    constructor() ERC721("Swift Tickets (Taylor's Version)", "SWIFT") { }
 
     function setMintPrice(uint256 _price) external onlyOwner {
         MINT_PRICE = _price;
