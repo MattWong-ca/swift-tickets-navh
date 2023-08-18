@@ -1,9 +1,6 @@
 import styles from './navbar.module.css';
 import { useState, useEffect } from 'react';
-import { ethers } from "ethers";
 import { MetaMaskSDK } from '@metamask/sdk';
-
-declare var window: any
 
 function truncateAddress(address: string): string {
     if (!address || address.length < 10) {
@@ -16,36 +13,41 @@ function truncateAddress(address: string): string {
 }
 
 export default function Navbar() {
+    const options = {
+        dappMetadata: { name: "Swift Tickets", url: "https://mydapp.com" },
+        injectProvider: true,
+      };
 
-    const MMSDK = new MetaMaskSDK();
+      const [currentAccount, setCurrentAccount] = useState("");
+      const MMSDK = new MetaMaskSDK(options);
     
-    const ethereum = MMSDK.getProvider();
-
-    const [currentAccount, setCurrentAccount] = useState("");
-
-    const getEthereumObject = () => window.ethereum;
-
     const connectWallet = async () => {
         try {
-            const ethereum = getEthereumObject();
-            if (!ethereum) {
-                alert("Get MetaMask!");
-                return;
+            const ethereum = MMSDK.getProvider();
+            if (ethereum) {
+                const accounts = await ethereum.request({ method: "eth_requestAccounts" }) as string[];
+                setCurrentAccount(accounts[0]);
+            } else {
+                console.error("Ethereum provider not available.");
             }
-
-            const accounts = await ethereum.request({ method: "eth_requestAccounts" });
-
-            // console.log("Connected", accounts[0]);
-            setCurrentAccount(accounts[0]);
-
         } catch (error) {
             console.error(error);
         }
     };
 
     useEffect(() => {
-        connectWallet();
-    }, [])
+        const ethereum = MMSDK.getProvider();
+
+        const checkMetaMask = async () => {
+          if (ethereum && ethereum.isConnected()) {
+            // Request the current accounts from MetaMask
+            const accounts = await ethereum.request({ method: 'eth_accounts' }) as string[];
+            setCurrentAccount(accounts[0]);
+          }
+        };
+    
+        checkMetaMask();
+      }, []);
 
     return (
         <div className={styles.navbar}>
@@ -58,4 +60,4 @@ export default function Navbar() {
             )}
         </div>
     );
-}
+} 
