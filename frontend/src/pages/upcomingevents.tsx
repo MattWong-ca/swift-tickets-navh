@@ -1,6 +1,5 @@
 import Navbar from '../components/navbar';
 import styles from '../styles/upcomingevents.module.css';
-import WorldcoinButton from './checkoutz';
 import Link from 'next/link';
 
 export default function Upcomingevents() {
@@ -16,7 +15,7 @@ export default function Upcomingevents() {
                     <div className={styles.wcard}>
 
                         <div style={{ height: '100px', position: 'relative' }}>
-                            <img className={styles.backgroundimage} src="/images/tscardz.jpg" alt="Background" />
+                            <img className={styles.backgroundimage} src="/images/concert.jpg" alt="Background" />
                             <img
                                 style={{
                                     width: '100px', // Adjust the width of the square image
@@ -31,9 +30,9 @@ export default function Upcomingevents() {
                             />
                         </div>
 
-                        <p style={{ marginTop: '40px', marginLeft: '30px', fontFamily: '"Arial Narrow", Arial, sans-serif', fontWeight: 'bold', fontSize: '30px' }}>The Eras Tour - Section Z</p>
-                        <p style={{ marginLeft: '30px', fontFamily: 'Arial Mono, monospace', color: '#777777' }}>Toronto, CA | Nov 15 2024</p>
-                        <div className={styles.worldcoinbutton}/*style={{ marginLeft: '30px', marginTop: '25px', fontFamily: '"Arial Narrow", Arial, sans-serif', fontWeight: '700', border: '3px solid black', borderRadius: '0' }}*/>
+                        <p style={{ marginTop: '40px', marginLeft: '30px', fontFamily: '"Arial Narrow", Arial, sans-serif', fontWeight: 'bold', fontSize: '30px' }}>The Eras Tour - Nov 14</p>
+                        <p style={{ marginLeft: '30px', fontFamily: 'Arial Mono, monospace', color: '#777777' }}>Toronto, CA | 7PM</p>
+                        <div className={styles.worldcoinbutton}>
                             <Link href="/checkoutz">
                                 <button role="button">PURCHASE TICKET</button>
                             </Link>
@@ -43,7 +42,7 @@ export default function Upcomingevents() {
                     <div className={styles.wcard}>
 
                         <div style={{ height: '100px', position: 'relative' }}>
-                            <img className={styles.backgroundimage} src="/images/tsblue.jpeg" alt="Background" />
+                            <img className={styles.backgroundimage} src="/images/concert.jpg" alt="Background" />
                             <img
                                 style={{
                                     width: '100px', // Adjust the width of the square image
@@ -58,9 +57,9 @@ export default function Upcomingevents() {
                             />
                         </div>
 
-                        <p style={{ marginTop: '40px', marginLeft: '30px', fontFamily: '"Arial Narrow", Arial, sans-serif', fontWeight: 'bold', fontSize: '30px' }}>The Eras Tour - Section B</p>
-                        <p style={{ marginLeft: '30px', fontFamily: 'Arial Mono, monospace', color: '#777777' }}>Toronto, CA | Nov 15 2024</p>
-                        <div className={styles.worldcoinbutton}/*style={{ marginLeft: '30px', marginTop: '25px', fontFamily: '"Arial Narrow", Arial, sans-serif', fontWeight: '700', border: '3px solid black', borderRadius: '0' }}*/>
+                        <p style={{ marginTop: '40px', marginLeft: '30px', fontFamily: '"Arial Narrow", Arial, sans-serif', fontWeight: 'bold', fontSize: '30px' }}>The Eras Tour - Nov 15</p>
+                        <p style={{ marginLeft: '30px', fontFamily: 'Arial Mono, monospace', color: '#777777' }}>Toronto, CA | 7PM</p>
+                        <div className={styles.worldcoinbutton}>
                             <Link href="/checkoutb">
                                 <button role="button">PURCHASE TICKET</button>
                             </Link>
@@ -70,7 +69,7 @@ export default function Upcomingevents() {
                     <div className={styles.wcard}>
 
                         <div style={{ height: '100px', position: 'relative' }}>
-                            <img className={styles.backgroundimage} src="/images/tsred.jpeg" alt="Background" />
+                            <img className={styles.backgroundimage} src="/images/concert.jpg" alt="Background" />
                             <img
                                 style={{
                                     width: '100px', // Adjust the width of the square image
@@ -85,10 +84,9 @@ export default function Upcomingevents() {
                             />
                         </div>
 
-                        <p style={{ marginTop: '40px', marginLeft: '30px', fontFamily: '"Arial Narrow", Arial, sans-serif', fontWeight: 'bold', fontSize: '30px' }}>The Eras Tour - Section O</p>
-                        <p style={{ marginLeft: '30px', fontFamily: 'Arial Mono, monospace', color: '#777777' }}>Toronto, CA | Nov 15 2024</p>
-                        <div className={styles.worldcoinbutton}/*style={{ marginLeft: '30px', marginTop: '25px', fontFamily: '"Arial Narrow", Arial, sans-serif', fontWeight: '700', border: '3px solid black', borderRadius: '0' }}*/>
-                            {/* <button>PURCHASE TICKET</button> */}
+                        <p style={{ marginTop: '40px', marginLeft: '30px', fontFamily: '"Arial Narrow", Arial, sans-serif', fontWeight: 'bold', fontSize: '30px' }}>The Eras Tour - Nov 16</p>
+                        <p style={{ marginLeft: '30px', fontFamily: 'Arial Mono, monospace', color: '#777777' }}>Toronto, CA | 7PM</p>
+                        <div className={styles.worldcoinbutton}>
                             <Link href="/checkouto">
                                 <button role="button">PURCHASE TICKET</button>
                             </Link>
@@ -101,7 +99,7 @@ export default function Upcomingevents() {
                     <div className={styles.wcard}>
 
                         <div style={{ height: '100px', position: 'relative' }}>
-                            <img className={styles.backgroundimage} src="/images/tsgreen.jpg" alt="Background" />
+                            <img className={styles.backgroundimage} src="/images/concert.jpg" alt="Background" />
                             <img
                                 style={{
                                     width: '100px', // Adjust the width of the square image
@@ -116,10 +114,9 @@ export default function Upcomingevents() {
                             />
                         </div>
 
-                        <p style={{ marginTop: '40px', marginLeft: '30px', fontFamily: '"Arial Narrow", Arial, sans-serif', fontWeight: 'bold', fontSize: '30px' }}>The Eras Tour - Section M</p>
-                        <p style={{ marginLeft: '30px', fontFamily: 'Arial Mono, monospace', color: '#777777' }}>Toronto, CA | Nov 15 2024</p>
-                        <div className={styles.worldcoinbutton}/*style={{ marginLeft: '30px', marginTop: '25px', fontFamily: '"Arial Narrow", Arial, sans-serif', fontWeight: '700', border: '3px solid black', borderRadius: '0' }}*/>
-                            {/* <button>PURCHASE TICKET</button> */}
+                        <p style={{ marginTop: '40px', marginLeft: '30px', fontFamily: '"Arial Narrow", Arial, sans-serif', fontWeight: 'bold', fontSize: '30px' }}>The Eras Tour - Nov 17</p>
+                        <p style={{ marginLeft: '30px', fontFamily: 'Arial Mono, monospace', color: '#777777' }}>Toronto, CA | 7PM</p>
+                        <div className={styles.worldcoinbutton}>
                             <Link href="/checkoutm">
                                 <button role="button">PURCHASE TICKET</button>
                             </Link>
@@ -128,7 +125,7 @@ export default function Upcomingevents() {
                     <div className={styles.wcard}>
 
                         <div style={{ height: '100px', position: 'relative' }}>
-                            <img className={styles.backgroundimage} src="/images/tscardw.jpeg" alt="Background" />
+                            <img className={styles.backgroundimage} src="/images/concert.jpg" alt="Background" />
                             <img
                                 style={{
                                     width: '100px', // Adjust the width of the square image
@@ -143,9 +140,9 @@ export default function Upcomingevents() {
                             />
                         </div>
 
-                        <p style={{ marginTop: '40px', marginLeft: '30px', fontFamily: '"Arial Narrow", Arial, sans-serif', fontWeight: 'bold', fontSize: '30px' }}>The Eras Tour - Section W</p>
-                        <p style={{ marginLeft: '30px', fontFamily: 'Arial Mono, monospace', color: '#777777' }}>Toronto, CA | Nov 15 2024</p>
-                        <div className={styles.worldcoinbutton}/*style={{ marginLeft: '30px', marginTop: '25px', fontFamily: '"Arial Narrow", Arial, sans-serif', fontWeight: '700', border: '3px solid black', borderRadius: '0' }}*/>
+                        <p style={{ marginTop: '40px', marginLeft: '30px', fontFamily: '"Arial Narrow", Arial, sans-serif', fontWeight: 'bold', fontSize: '30px' }}>The Eras Tour - Nov 17</p>
+                        <p style={{ marginLeft: '30px', fontFamily: 'Arial Mono, monospace', color: '#777777' }}>Toronto, CA | 7PM</p>
+                        <div className={styles.worldcoinbutton}>
                             <Link href="/checkoute">
                                 <button role="button">PURCHASE TICKET</button>
                             </Link>
