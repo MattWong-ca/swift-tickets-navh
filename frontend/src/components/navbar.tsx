@@ -52,7 +52,7 @@ export default function Navbar() {
     return (
         <div className={styles.navbar}>
             <a href="/">
-                <img className={styles.logo} src="/images/logo.png" alt="Swift Tickets Logo" />
+                <p className={styles.truncatedAddress}>SWIFT TICKETS</p>
             </a>
             <p className={styles.truncatedAddress}>{truncateAddress(currentAccount)}</p>
             {!currentAccount && (

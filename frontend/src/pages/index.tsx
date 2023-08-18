@@ -29,7 +29,7 @@ export default function Home() {
 			</div>
 			<div className={styles.valueprop2}>
 				<div className={styles.summercontainer}>
-					<p className={styles.summer}><s>ONCHAIN</s> CRUEL SUMMER</p>
+					<p className={styles.summer}>CRUEL SUMMER</p>
 					<p className={styles.summertext}>Canadian fans are extremely frustrated, with most being left on a waitlist. It was a 0.25% chance to get a Eras ticket.</p>
 				</div>
 				<img className={styles.backgroundimage} src="/images/twitterproof.webp" alt="NY Times" />
@@ -46,19 +46,17 @@ export default function Home() {
 				<p className={styles.poweredby}>POWERED BY</p>
 				<div className={styles.logocarousel}>
 					<div className={styles.logoslide}>
-						<img style={{ filter: 'brightness(0) invert(1)' }} src="/images/worldcoin.svg" />
-						<img style={{ filter: 'brightness(0) invert(1)' }} src="/images/base.svg" />
-						<img src="/images/op.png" />
-						<img style={{ filter: 'brightness(0) invert(1)' }} src="/images/zora.svg" />
-						<img src="/images/modenetwork.svg" />
+						<img src="/images/metamask.png" />
+						<img src="/images/linea.svg" />
+						<img style={{ filter: 'brightness(0) invert(1)' }} src="/images/Infura.png" />
+						<img src="/images/truffle.png" />
 					</div>
 
 					<div className={styles.logoslide}>
-						<img style={{ filter: 'brightness(0) invert(1)' }} src="/images/worldcoin.svg" />
-						<img style={{ filter: 'brightness(0) invert(1)' }} src="/images/base.svg" />
-						<img src="/images/op.png" />
-						<img style={{ filter: 'brightness(0) invert(1)' }} src="/images/zora.svg" />
-						<img src="/images/modenetwork.svg" />
+						<img src="/images/metamask.png" />
+						<img src="/images/linea.svg" />		
+						<img style={{ filter: 'brightness(0) invert(1)' }} src="/images/Infura.png" />
+						<img src="/images/truffle.png" />
 					</div>
 				</div>
 			</div>
