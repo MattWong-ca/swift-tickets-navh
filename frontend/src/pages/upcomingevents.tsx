@@ -25,7 +25,7 @@ export default function Upcomingevents() {
                                     transform: 'translate(-50%, -50%)', // Center the square image
                                     border: '2px solid black',
                                 }}
-                                src="/images/taylorswifteraspfp.jpeg"
+                                src="/images/erastourlogo.png"
                                 alt="Square Image"
                             />
                         </div>
@@ -33,7 +33,7 @@ export default function Upcomingevents() {
                         <p style={{ marginTop: '40px', marginLeft: '30px', fontFamily: '"Arial Narrow", Arial, sans-serif', fontWeight: 'bold', fontSize: '30px' }}>The Eras Tour - Nov 14</p>
                         <p style={{ marginLeft: '30px', fontFamily: 'Arial Mono, monospace', color: '#777777' }}>Toronto, CA | 7PM</p>
                         <div className={styles.worldcoinbutton}>
-                            <Link href="/checkoutz">
+                            <Link href="/checkout">
                                 <button role="button">PURCHASE TICKET</button>
                             </Link>
                         </div>
@@ -52,7 +52,7 @@ export default function Upcomingevents() {
                                     transform: 'translate(-50%, -50%)', // Center the square image
                                     border: '2px solid black',
                                 }}
-                                src="/images/taylorswifteraspfp.jpeg"
+                                src="/images/nov15.png"
                                 alt="Square Image"
                             />
                         </div>
@@ -60,7 +60,7 @@ export default function Upcomingevents() {
                         <p style={{ marginTop: '40px', marginLeft: '30px', fontFamily: '"Arial Narrow", Arial, sans-serif', fontWeight: 'bold', fontSize: '30px' }}>The Eras Tour - Nov 15</p>
                         <p style={{ marginLeft: '30px', fontFamily: 'Arial Mono, monospace', color: '#777777' }}>Toronto, CA | 7PM</p>
                         <div className={styles.worldcoinbutton}>
-                            <Link href="/checkoutb">
+                            <Link href="/checkout">
                                 <button role="button">PURCHASE TICKET</button>
                             </Link>
                         </div>
@@ -79,7 +79,7 @@ export default function Upcomingevents() {
                                     transform: 'translate(-50%, -50%)', // Center the square image
                                     border: '2px solid black',
                                 }}
-                                src="/images/taylorswifteraspfp.jpeg"
+                                src="/images/nov16.png"
                                 alt="Square Image"
                             />
                         </div>
@@ -87,7 +87,7 @@ export default function Upcomingevents() {
                         <p style={{ marginTop: '40px', marginLeft: '30px', fontFamily: '"Arial Narrow", Arial, sans-serif', fontWeight: 'bold', fontSize: '30px' }}>The Eras Tour - Nov 16</p>
                         <p style={{ marginLeft: '30px', fontFamily: 'Arial Mono, monospace', color: '#777777' }}>Toronto, CA | 7PM</p>
                         <div className={styles.worldcoinbutton}>
-                            <Link href="/checkouto">
+                            <Link href="/checkout">
                                 <button role="button">PURCHASE TICKET</button>
                             </Link>
                         </div>
@@ -109,7 +109,7 @@ export default function Upcomingevents() {
                                     transform: 'translate(-50%, -50%)', // Center the square image
                                     border: '2px solid black',
                                 }}
-                                src="/images/taylorswifteraspfp.jpeg"
+                                src="/images/nov17.png"
                                 alt="Square Image"
                             />
                         </div>
@@ -117,7 +117,7 @@ export default function Upcomingevents() {
                         <p style={{ marginTop: '40px', marginLeft: '30px', fontFamily: '"Arial Narrow", Arial, sans-serif', fontWeight: 'bold', fontSize: '30px' }}>The Eras Tour - Nov 17</p>
                         <p style={{ marginLeft: '30px', fontFamily: 'Arial Mono, monospace', color: '#777777' }}>Toronto, CA | 7PM</p>
                         <div className={styles.worldcoinbutton}>
-                            <Link href="/checkoutm">
+                            <Link href="/checkout">
                                 <button role="button">PURCHASE TICKET</button>
                             </Link>
                         </div>
@@ -135,7 +135,7 @@ export default function Upcomingevents() {
                                     transform: 'translate(-50%, -50%)', // Center the square image
                                     border: '2px solid black',
                                 }}
-                                src="/images/taylorswifteraspfp.jpeg"
+                                src="/images/nov17.png"
                                 alt="Square Image"
                             />
                         </div>
@@ -143,7 +143,7 @@ export default function Upcomingevents() {
                         <p style={{ marginTop: '40px', marginLeft: '30px', fontFamily: '"Arial Narrow", Arial, sans-serif', fontWeight: 'bold', fontSize: '30px' }}>The Eras Tour - Nov 17</p>
                         <p style={{ marginLeft: '30px', fontFamily: 'Arial Mono, monospace', color: '#777777' }}>Toronto, CA | 7PM</p>
                         <div className={styles.worldcoinbutton}>
-                            <Link href="/checkoute">
+                            <Link href="/checkout">
                                 <button role="button">PURCHASE TICKET</button>
                             </Link>
                         </div>

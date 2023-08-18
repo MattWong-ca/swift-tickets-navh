@@ -8,13 +8,13 @@ import supabase from '../utils/supabaseConfig';
 import { ethers } from 'ethers';
 import { useRouter } from 'next/router';
 
-import opNFT from '../utils/opContract.json';
+import zoraNFT from '../utils/zoraContract.json';
 
 declare var window: any
 
-const OP_CONTRACT_ADDRESS = "0xb861d6d79123ADa308E5F4030F458b402E2D131A";
+const ZORA_CONTRACT_ADDRESS = "0x8a204761fFb6eDD676eC28849De46D5e59F87fE1";
 
-export default function CheckoutO() {
+export default function Checkout() {
 
 	const [userVerified, setUserVerified] = useState(false);
 	const [currentAccount, setCurrentAccount] = useState("");
@@ -63,7 +63,7 @@ export default function CheckoutO() {
 				const provider = new ethers.providers.Web3Provider(ethereum);
 				const signer = provider.getSigner();
 				// CHANGE THESE DEPENDING ON THE CHAIN
-				const connectedContract = new ethers.Contract(OP_CONTRACT_ADDRESS, opNFT.abi, signer);
+				const connectedContract = new ethers.Contract(ZORA_CONTRACT_ADDRESS, zoraNFT.abi, signer);
 
 				console.log("Going to pop wallet now to pay gas...")
 				let nftTxn = await connectedContract.mintNFTTicket({ value: MINT_PRICE, from: currentAccount })
@@ -131,8 +131,8 @@ export default function CheckoutO() {
 			let chainId = await ethereum.request({ method: 'eth_chainId' });
 			console.log("Connected to chain " + chainId);
 
-			if (chainId !== "0x1a4") {
-				alert("You are not connected to Optimism Goerli!");
+			if (chainId !== "0x3e7") {
+				alert("You are not connected to Zora Goerli!");
 				return;
 			}
 
