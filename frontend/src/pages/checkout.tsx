@@ -9,10 +9,12 @@ import { ethers } from 'ethers';
 import { useRouter } from 'next/router';
 
 import zoraNFT from '../utils/zoraContract.json';
+import goerliNFT from '../utils/zoraContract.json';
 
 declare var window: any
 
 const ZORA_CONTRACT_ADDRESS = "0x8a204761fFb6eDD676eC28849De46D5e59F87fE1";
+const GOERLI_CONTRACT_ADDRESS = "0xa4dcd85885daa2efd8aa1ca1699b3846afbe5a10";
 
 export default function Checkout() {
 
@@ -63,7 +65,7 @@ export default function Checkout() {
 				const provider = new ethers.providers.Web3Provider(ethereum);
 				const signer = provider.getSigner();
 				// CHANGE THESE DEPENDING ON THE CHAIN
-				const connectedContract = new ethers.Contract(ZORA_CONTRACT_ADDRESS, zoraNFT.abi, signer);
+				const connectedContract = new ethers.Contract(GOERLI_CONTRACT_ADDRESS, goerliNFT.abi, signer);
 
 				console.log("Going to pop wallet now to pay gas...")
 				let nftTxn = await connectedContract.mintNFTTicket({ value: MINT_PRICE, from: currentAccount })

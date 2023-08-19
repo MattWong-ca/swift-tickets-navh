@@ -24,7 +24,7 @@ export default function Home() {
 				<img className={styles.backgroundimage} src="/images/times.png" alt="NY Times" />
 				<div className={styles.problemcontainer}>
 					<p className={styles.bots}>I’M THE PROBLEM, IT’S ME – 🤖</p>
-					<p className={styles.botstext}>Bots + Tickermaster’s failed attempts to fend them off. They’re a giant monopoly, and Verified Fan just isn’t the solution. The site even went down last November!</p>
+					<p className={styles.botstext}>Bots + Ticketmaster’s failed attempts to fend them off. They’re a giant monopoly, and Verified Fan just isn’t the solution. The site even went down last November!</p>
 				</div>
 			</div>
 			<div className={styles.valueprop2}>
@@ -49,6 +49,7 @@ export default function Home() {
 						<img src="/images/metamask.png" />
 						<img src="/images/linea.svg" />
 						<img style={{ filter: 'brightness(0) invert(1)' }} src="/images/Infura.png" />
+						<img src="/images/thirdweb.svg" />
 						<img src="/images/truffle.png" />
 					</div>
 
@@ -56,6 +57,7 @@ export default function Home() {
 						<img src="/images/metamask.png" />
 						<img src="/images/linea.svg" />		
 						<img style={{ filter: 'brightness(0) invert(1)' }} src="/images/Infura.png" />
+						<img src="/images/thirdweb.svg" />
 						<img src="/images/truffle.png" />
 					</div>
 				</div>
