@@ -1,6 +1,7 @@
 import styles from '../styles/loading.module.css';
 import Navbar from '../components/navbar';
 import { useState, useEffect } from 'react';
+import Link from 'next/link';
 
 declare var window: any
 
@@ -37,8 +38,14 @@ export default function Confirmation() {
 			<div className={styles.backgroundContainer}>
 				<div className={styles.confirmed}>
 					<p className={styles.ticketconfirmed}>TICKET CONFIRMED! 🥳</p>
-					<img style={{ width: '300px', border: '2px solid black', marginBottom: '20px' }} src="/images/erastourlogo.png" alt="Square Image"/>
-					<p className={styles.minting}>CHECK IT OUT ON <a href={'https://testnets.opensea.io/' + currentAccount} target="_blank" rel="noopener noreferrer" className={styles.link}>OPENSEA</a></p>
+					<img style={{ width: '300px', border: '2px solid black', marginBottom: '20px' }} src="/images/erastourlogo.png" alt="Square Image" />
+					<p className={styles.minting}>
+						CHECK IT OUT ON YOUR{' '}
+						<Link href="/profile">
+							<span className={styles.link}>PROFILE</span>
+						</Link>
+					</p>
+					<p className={styles.minting2}>(OR VIEW ON <a href={'https://testnets.opensea.io/' + currentAccount} target="_blank" rel="noopener noreferrer" className={styles.link}>OPENSEA</a>)</p>
 				</div>
 			</div>
 		</div>
