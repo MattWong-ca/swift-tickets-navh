@@ -13,7 +13,7 @@ contract MintTicket is ERC721URIStorage, Ownable {
     uint256 public MINT_PRICE = 0.013 ether;
 
     // We need to pass the name of our NFTs token and its symbol.
-    constructor() ERC721("Swift Tickets", "SWIFT") { }
+    constructor() ERC721("Swift Tickets", "SWIFT") {}
 
     function setMintPrice(uint256 _price) external onlyOwner {
         MINT_PRICE = _price;
@@ -32,10 +32,15 @@ contract MintTicket is ERC721URIStorage, Ownable {
         // Return the NFT's metadata
         _setTokenURI(
             newTicketId,
-            "ipfs://QmWNff6ke3f9nbrLdWrD12aWMcJ2fqB1w4LpFJSPG1r63a"
+            "ipfs://Qmcoq5NybQA68LCzKhAXfSsVfhroujGinE3p6AnrA5eZqB"
         );
 
         // Increment counter when next NFT ticket is minted
         mintedTicketCount++;
+    }
+
+    function getLastMintedTokenId() public view returns (uint256) {
+        require(mintedTicketCount > 0, "No tickets minted yet");
+        return mintedTicketCount - 1;
     }
 }
