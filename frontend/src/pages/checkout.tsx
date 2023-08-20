@@ -89,6 +89,7 @@ export default function Checkout() {
 		}
 	}
 
+	/*
 	const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
 		event.preventDefault(); // Prevent the default form submission behavior
 
@@ -99,7 +100,45 @@ export default function Checkout() {
 		} else {
 			window.alert("Must verify with World ID first!")
 		}
-	};
+	};*/
+
+	const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+        event.preventDefault(); // Prevent the default form submission behavior
+
+        const formData = new FormData(event.currentTarget);
+
+        const fullName = formData.get("name") as string;
+        const email = formData.get("email") as string;
+        const phoneNumber = formData.get("phone") as string;
+
+        // Save the form data to the database, including the Ethereum address
+        try {
+            const { data, error } = await supabase
+                .from("profile")
+                .upsert([
+                    {
+                        address: currentAccount,
+                        name: fullName,
+                        email: email,
+                        phone: phoneNumber,
+                    },
+                ]);
+
+            if (error) {
+                console.error("Error saving form data:", error);
+            } else {
+                console.log("Form data saved successfully:", data);
+            }
+        } catch (error) {
+            console.error("Error saving form data:", error);
+        }
+
+        if (userVerified) {
+            mintNftTicket();
+        } else {
+            window.alert("Must verify with World ID first!");
+        }
+    }
 
 	useEffect(() => {
 		async function fetchUserVerificationStatus() {
