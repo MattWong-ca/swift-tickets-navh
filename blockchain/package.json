@@ -3,5 +3,8 @@
     "@openzeppelin/contracts": "^4.9.3",
     "@truffle/hdwallet-provider": "^2.1.13",
     "dotenv": "^16.3.1"
+  },
+  "devDependencies": {
+    "truffle-plugin-verify": "^0.6.5"
   }
 }

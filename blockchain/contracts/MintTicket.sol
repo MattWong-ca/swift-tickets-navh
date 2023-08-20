@@ -13,7 +13,7 @@ contract MintTicket is ERC721URIStorage, Ownable {
     uint256 public MINT_PRICE = 0.013 ether;
 
     // We need to pass the name of our NFTs token and its symbol.
-    constructor() ERC721("Swift Tickets (Taylor's Version)", "SWIFT") { }
+    constructor() ERC721("Swift Tickets", "SWIFT") { }
 
     function setMintPrice(uint256 _price) external onlyOwner {
         MINT_PRICE = _price;
