@@ -253,7 +253,7 @@ export default function Checkout() {
 					<div className={styles.wcard}>
 						<img style={{ borderRight: '3px solid black' }} src="/images/concertticket.jpg"></img>
 						<div>
-							<p style={{ marginTop: '20px', marginLeft: '30px', fontFamily: '"Arial Narrow", Arial, sans-serif', fontWeight: 'bold', fontSize: '30px' }}>The Eras Tour - Nov 15 2024</p>
+							<p style={{ marginTop: '20px', marginLeft: '30px', fontFamily: '"Arial Narrow", Arial, sans-serif', fontWeight: 'bold', fontSize: '30px' }}>The Eras Tour - Nov 14 2024</p>
 							<p style={{ marginLeft: '30px', marginTop: '10px', fontFamily: 'Arial Mono, monospace', color: 'black' }}>Rogers Centre | Toronto, CA</p>
 							<p style={{ marginLeft: '30px', marginTop: '5px', fontFamily: 'Arial Mono, monospace', color: 'black' }}>Section 100, Row 1, Seat 3</p>
 							<p style={{ marginLeft: '30px', marginTop: '5px', fontFamily: 'Arial Mono, monospace', color: 'black' }}>7:00 PM ET</p>
