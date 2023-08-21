@@ -8,13 +8,13 @@ import supabase from '../utils/supabaseConfig';
 import { ethers } from 'ethers';
 import { useRouter } from 'next/router';
 
-import zoraNFT from '../utils/zoraContract.json';
-import goerliNFT from '../utils/zoraContract.json';
+import goerliNFT from '../utils/goerliContract.json';
+import lineaNFT from '../utils/lineaContract.json';
 
 declare var window: any
 
-const ZORA_CONTRACT_ADDRESS = "0x8a204761fFb6eDD676eC28849De46D5e59F87fE1";
-const GOERLI_CONTRACT_ADDRESS = "0xa4dcd85885daa2efd8aa1ca1699b3846afbe5a10";
+const GOERLI_CONTRACT_ADDRESS = "0x230e5C67CC8ADb19039b174FD0D288a7d2F417a3";
+const LINEA_CONTRACT_ADDRESS = "0x2A6123eEDea57303d2034f60A62C0C1529f06752";
 
 export default function Checkout() {
 
@@ -65,7 +65,7 @@ export default function Checkout() {
 				const provider = new ethers.providers.Web3Provider(ethereum);
 				const signer = provider.getSigner();
 				// CHANGE THESE DEPENDING ON THE CHAIN
-				const connectedContract = new ethers.Contract(GOERLI_CONTRACT_ADDRESS, goerliNFT.abi, signer);
+				const connectedContract = new ethers.Contract(LINEA_CONTRACT_ADDRESS, lineaNFT.abi, signer);
 
 				console.log("Going to pop wallet now to pay gas...")
 				let nftTxn = await connectedContract.mintNFTTicket({ value: MINT_PRICE, from: currentAccount })

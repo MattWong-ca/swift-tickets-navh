@@ -17,7 +17,7 @@ export default function Profile() {
     // const [lastMintedTokenId, setLastMintedTokenId] = useState(0);
     // const ethersContract = new ethers.Contract(contractAddress, contractAbi, signer);
 
-    const { contract } = useContract("0xa4dcd85885daa2efd8aa1ca1699b3846afbe5a10");
+    const { contract } = useContract("0x230e5C67CC8ADb19039b174FD0D288a7d2F417a3");
     const { data: nft, isLoading, error } = useNFT(contract, "0");
     const [currentAccount, setCurrentAccount] = useState("");
 
