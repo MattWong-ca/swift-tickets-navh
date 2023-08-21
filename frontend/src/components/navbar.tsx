@@ -50,7 +50,7 @@ export default function Navbar() {
 
         const checkMetaMask = async () => {
             const ethereum = MMSDK.getProvider();
-          if (ethereum) {
+          if (ethereum && ethereum.isConnected()) {
             // Request the current accounts from MetaMask
             const accounts = await ethereum.request({ method: 'eth_accounts' }) as string[];
             setCurrentAccount(accounts[0]);
