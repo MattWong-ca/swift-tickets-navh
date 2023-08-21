@@ -83,7 +83,17 @@ module.exports = {
         });
       },
       network_id: 59140,
-    },/*
+    },
+    'base-goerli': {
+      provider: function () {
+        return new HDWalletProvider({
+          privateKeys: [process.env.PRIVATE_KEY],
+          provider: `https://goerli.base.org`,
+        });
+      },
+      network_id: 84531,
+    },
+    /*
     development: {
       host: "127.0.0.1", // Localhost (default: none)
       port: 9545, // Standard Ethereum port (default: none)
