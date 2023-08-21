@@ -6,8 +6,6 @@ All images used in Swift Tickets were either from royalty-free sources or from p
 
 Live demo: https://swift-tickets-navh.vercel.app
 
-### WIP, will submit to NAVH!
-
 # 🤖 "It's Me, Hi, I'm The Problem, It's Me"
 You've likely heard of Ticketmaster’s inability to handle bots, especially in November '22 when fans waited HOURS (just to get nothing), or most recently in August '23, when their Eras Tour Verified Fan program was basically a lottery ticket—thousands of fans were waitlisted.
 
