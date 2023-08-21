@@ -32,7 +32,7 @@ export default function Home() {
 					<p className={styles.summer}>CRUEL SUMMER</p>
 					<p className={styles.summertext}>Canadian fans are extremely frustrated, with most being left on a waitlist. It was a 0.25% chance to get a Eras ticket.</p>
 				</div>
-				<img className={styles.backgroundimage} src="/images/twitterproof.webp" alt="NY Times" />
+				<img className={styles.backgroundimage} src="/images/twitterproof2.png" alt="NY Times" />
 			</div>
 			<div className={styles.valueprop}>
 				<img className={styles.backgroundimage} src="/images/worldcoinorb.jpeg" alt="NY Times" />
