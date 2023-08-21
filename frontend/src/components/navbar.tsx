@@ -16,11 +16,11 @@ export default function Navbar() {
     const options = {
         dappMetadata: { name: "Swift Tickets", url: "https://mydapp.com" },
         injectProvider: true,
-      };
+    };
 
-      const [currentAccount, setCurrentAccount] = useState("");
-      const MMSDK = new MetaMaskSDK(options);
-    
+    const [currentAccount, setCurrentAccount] = useState("");
+    const MMSDK = new MetaMaskSDK(options);
+
     const connectWallet = async () => {
         try {
             const ethereum = MMSDK.getProvider();
@@ -36,47 +36,17 @@ export default function Navbar() {
     };
 
     useEffect(() => {
-        // const ethereum = MMSDK.getProvider();
-
-        // const checkMetaMask = async () => {
-        //   if (ethereum && ethereum.isConnected()) {
-        //     // Request the current accounts from MetaMask
-        //     const accounts = await ethereum.request({ method: 'eth_accounts' }) as string[];
-        //     setCurrentAccount(accounts[0]);
-        //   }
-        // };
-        
-        
-
         const checkMetaMask = async () => {
             const ethereum = MMSDK.getProvider();
-          if (ethereum && ethereum.isConnected()) {
-            // Request the current accounts from MetaMask
-            const accounts = await ethereum.request({ method: 'eth_accounts' }) as string[];
-            setCurrentAccount(accounts[0]);
-          }
+            if (ethereum) {
+                // Request the current accounts from MetaMask
+                const accounts = await ethereum.request({ method: 'eth_accounts' }) as string[];
+                setCurrentAccount(accounts[0]);
+            }
         };
-    
+
         checkMetaMask();
-      }, []);
-
-    // useEffect(() => {
-    //     const ethereum = MMSDK.getProvider();
-    
-    //     const checkMetaMask = async () => {
-    //       if (ethereum && ethereum.isConnected()) {
-    //         // Request the current accounts from MetaMask
-    //         const accounts = await ethereum.request({ method: 'eth_accounts' }) as string[];
-    //         setCurrentAccount(accounts[0]);
-    //       }
-    //     };
-    
-    //     checkMetaMask();
-    // }, [MMSDK, currentAccount]);
-
-    // useEffect(() => {
-    //     connectWallet();
-    // }, []);
+    }, []);
 
     return (
         <div className={styles.navbar}>
