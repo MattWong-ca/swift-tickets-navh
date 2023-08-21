@@ -35,9 +35,34 @@ export default function Navbar() {
         }
     };
 
+    useEffect(() => {
+        // const ethereum = MMSDK.getProvider();
+
+        // const checkMetaMask = async () => {
+        //   if (ethereum && ethereum.isConnected()) {
+        //     // Request the current accounts from MetaMask
+        //     const accounts = await ethereum.request({ method: 'eth_accounts' }) as string[];
+        //     setCurrentAccount(accounts[0]);
+        //   }
+        // };
+        
+        
+
+        const checkMetaMask = async () => {
+            const ethereum = MMSDK.getProvider();
+          if (ethereum) {
+            // Request the current accounts from MetaMask
+            const accounts = await ethereum.request({ method: 'eth_accounts' }) as string[];
+            setCurrentAccount(accounts[0]);
+          }
+        };
+    
+        checkMetaMask();
+      }, []);
+
     // useEffect(() => {
     //     const ethereum = MMSDK.getProvider();
-
+    
     //     const checkMetaMask = async () => {
     //       if (ethereum && ethereum.isConnected()) {
     //         // Request the current accounts from MetaMask
@@ -47,21 +72,11 @@ export default function Navbar() {
     //     };
     
     //     checkMetaMask();
-    //   }, []);
+    // }, [MMSDK, currentAccount]);
 
-    useEffect(() => {
-        const ethereum = MMSDK.getProvider();
-    
-        const checkMetaMask = async () => {
-          if (ethereum && ethereum.isConnected()) {
-            // Request the current accounts from MetaMask
-            const accounts = await ethereum.request({ method: 'eth_accounts' }) as string[];
-            setCurrentAccount(accounts[0]);
-          }
-        };
-    
-        checkMetaMask();
-    }, [MMSDK, currentAccount]);
+    // useEffect(() => {
+    //     connectWallet();
+    // }, []);
 
     return (
         <div className={styles.navbar}>
