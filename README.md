@@ -1,6 +1,10 @@
-# 🎤 Swift Tickets (Taylor's Version)
+# 🎤 Swift Tickets
+
+All images used in Swift Tickets were either from royalty-free sources or from partner companies themselves.
 
 [Insert image soon]
+
+Live demo: https://swift-tickets-navh.vercel.app
 
 ### WIP, will submit to NAVH!
 
@@ -12,7 +16,7 @@ The Events Tickets market is a huge opportunity. According to Statista:
 
 Ticketmaster is a monopoly and their Verified Fan just **doesn't work**.
 
-### 😭 ~~Onchain~~ Cruel Summer
+### 😭 Cruel Summer
 Canadian fans are [frustrated](https://ca.style.yahoo.com/canadian-taylor-swift-fans-toronto-shows-waitlist-142720549.html) that they're all on the waitlist for Swift's Eras Tour in Toronto (November 2024). There was only a 1 in 400 chance of getting a ticket ([source](https://www.theglobeandmail.com/canada/article-taylor-swift-canada-tickets-codes-percentage/)), so it's actually easier to get into Harvard than to get a Eras ticket :P
 
 ### 👁️ You're The Only One Of You
@@ -50,6 +54,20 @@ The key value prop of this platform is using World ID to prevent bots. The UI/UX
 - [Optimism Goerli](https://goerli-optimism.etherscan.io/address/0xb861d6d79123ada308e5f4030f458b402e2d131a)
 - [Mode Testnet](https://sepolia.explorer.mode.network/address/0xb861d6d79123ADa308E5F4030F458b402E2D131A)
 - [Goerli](https://goerli.etherscan.io/address/0x46224855ce16b2a5a8ddfab0578da8828d43f601)
+- Goerli: 0x230e5C67CC8ADb19039b174FD0D288a7d2F417a3
+
+### Notes
+- To verify a contract on Etherscan, use [this](https://forum.openzeppelin.com/t/how-to-flatten-and-verify-a-smart-contract-using-openzeppelin-contracts/1119)
+- Also [this](https://docs.xdc.community/get-details/smart-contract-details/flattening-smart-contracts/flattening-smart-contracts-with-truffle) article by XDC
+- Make sure to delete all the `SPDX...` lines other than the first one
+- Whenever I want to re-deploy contract, I need to update contract address in profile.tsx, checkout.tsx, and the JSON ABI file.
+
+### Steps
+1. truffle migrate to deploy contract
+2. npx truffle-flattener to flatten contract into 1
+3. verify and publish on Etherscan UI
+4. import to thirdweb
+5. use in profile.tsx
 
 # 🚀 Future Plans
 ### QR Code Ticket
