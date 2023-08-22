@@ -2,7 +2,7 @@
 ### Live demo: https://swift-tickets-navh.vercel.app
 ### YouTube video: https://youtu.be/GCiS5LiToCU
 
-[Insert image soon]
+<img width="1440" alt="Swift Tickets NAVH Cover" src="https://github.com/MattWong-ca/swift-tickets-navh/assets/66754344/3e5282f1-e8d1-4373-a491-e1238de48d74">
 
 # 📝 About
 Swift Tickets is an NFT ticketing platform that disrupts the $78B Event Tickets market, leveraging Worldcoin's World ID to prevent bots from buying tickets of artists like Taylor Swift. We're on a mission to provide fans with a fair chance to buy tickets to their favourite concerts, sporting events, and more. We provide a fair chance at tickets, the option to buy in crypto, and *transparency* in the ticketing process.
