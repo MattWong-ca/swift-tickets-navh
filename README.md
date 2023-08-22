@@ -5,7 +5,7 @@
 [Insert image soon]
 
 # 📝 About
-Swift Tickets is an NFT ticketing platform that disrupts the $78B Event Tickets market, leveraging Worldcoin's World ID to prevent bots from buying tickets of artists like Taylor Swift.
+Swift Tickets is an NFT ticketing platform that disrupts the $78B Event Tickets market, leveraging Worldcoin's World ID to prevent bots from buying tickets of artists like Taylor Swift. We're on a mission to provide fans with a fair chance to buy tickets to their favourite concerts, sporting events, and more. We provide a fair chance at tickets, the option to buy in crypto, and *transparency* in the ticketing process.
 
 ### 🤖 "It's Me, Hi, I'm The Problem, It's Me"
 You've likely heard of Ticketmaster’s inability to handle bots, especially in November '22 when fans waited HOURS (just to get nothing), or most recently in August '23, when their Eras Tour Verified Fan program was basically a lottery ticket—thousands of fans were waitlisted.
@@ -21,7 +21,7 @@ Canadian fans are [frustrated](https://ca.style.yahoo.com/canadian-taylor-swift-
 ### 👁️ You're The Only One Of You
 With Swift Tickets' use of World ID, only **real** humans can buy tickets! This prevents bots from accessing the checkout. In the future, I'll implement different verification levels based on orb / phone verification, which can differentiate fans' chances of getting in depending on how much we're able to prove they're human.
 
-# Consensys Products
+# 🛠 Consensys Products
 ### MetaMask
 Implemented connect wallet button using the MetaMask SDK, enabling users to login with mobile wallets and also see their address in the navbar.
 
